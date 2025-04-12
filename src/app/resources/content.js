@@ -81,8 +81,9 @@ const about = {
     description: (
       <>
         Divjot is an AI engineer, researcher, and student entrepreneur passionate about designing 
-        intelligent systems. He has worked on factory optimization at Renault-Nissan, healthcare 
-        AI at IIT Bombay, and research projects involving exosome-based diagnostics.
+        intelligent systems. He has worked on factory optimization at Renault-Nissan, Fintech
+        solutions at IIT Madras, and AI-driven health diagnostics. He is currently studying 
+        AI at SRMIST, Kattankulathur, and is working on research projects involving exosome-based medical diagnostics.
       </>
     ),
   },
@@ -91,53 +92,79 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
-        company: "Renault-Nissan AI Lab",
-        timeframe: "2024",
-        role: "AI Intern",
+        company: "IIT Madras, CAMS IIT-M Fintech Innovation Lab, Chennai, Tamil Nadu",
+        timeframe: "June 2024 - August 2024",
+        role: "Research Intern",
         achievements: [
-          <>Built a recommendation system for optimal vendor selection across multiple metrics.</>,
-          <>Developed a chatbot to help factory teams understand vendor quality data.</>,
+          <>Performed feasibility analysis to explore the integration of AI in financial modeling and fintech solutions.</>,
+          <>Finetuned a RAG-based LLM on financial Data with web search capabilities.</>,
         ],
         images: [],
       },
       {
-        company: "IIT Bombay",
-        timeframe: "2023",
-        role: "Hackathon Finalist - PULSE",
+        company: "Renault Nissan, Chennai, Tamil Nadu",
+        timeframe: "September 2024 - November 2024",
+        role: "Technical Intern",
         achievements: [
-          <>Won 2nd place out of 500 teams, building a medical alert AI platform.</>,
-          <>Worked on real-time diagnostics and health signal analysis.</>,
+          <>Developed an algorithm to evaluate past part vendors based on pricing, lead time, MOQ, quality, defect rates and other variables, enabling data-driven reordering decisions and improving time to make decisions by 60%.</>,
+          <>Designed a chatbot to simplify access to the vendor analysis data using structured outputs, improving decision-making efficiency.</>,
+        ],
+        images: [],
+      },
+      {
+        company: "FlowNow",
+        timeframe: "Jan 2025 - Present",
+        role: "Technical Intern",
+        achievements: [
+          <>Working on the AI aspects of a WebApp designed to increase Attention and concentration for ADHD and Test Prep students.</>,
         ],
         images: [],
       },
     ],
-  },
+  },  
   hackathon: {
     display: true,
     title: "Hackathons Won",
     experiences: [
       {
-        company: "Pulse Hackathon - IIT Bombay",
+        company: "Pulse Hackathon - IIT Bombay Vogue Fusion",
         timeframe: "2024",
-        role: "AI Intern",
+        role: "2nd Rank Winner",
         achievements: [
-          <>Built a recommendation system for optimal vendor selection across multiple metrics.</>,
-          <>Developed a chatbot to help factory teams understand vendor quality data.</>,
+          <>Secured 2nd rank amongst over 500 teams.</>,
+          <>Project - VogueFusion (<a href="https://github.com/djsmanchanda/VogueFusion_Pulse" target="_blank" rel="noopener noreferrer">GitHub Repo</a>).</>,
         ],
         images: [],
       },
       {
-        company: "IIT Bombay",
-        timeframe: "2023",
-        role: "Hackathon Finalist - PULSE",
+        company: "Synapse 2.0 - PES Bangalore",
+        timeframe: "2024",
+        role: "2nd Rank Winner",
         achievements: [
-          <>Won 2nd place out of 500 teams, building a medical alert AI platform.</>,
-          <>Worked on real-time diagnostics and health signal analysis.</>,
+          <>Achieved 2nd rank at the National Level Hackathon.</>,
+        ],
+        images: [],
+      },
+      {
+        company: "HackStreet 2.0 (PENTATHON) - SRM",
+        timeframe: "2024",
+        role: "1st Rank Winner",
+        achievements: [
+          <>Awarded 1st rank for Project – RadixAI.</>,
+        ],
+        images: [],
+      },
+      {
+        company: "Innofusion’24 - SRM",
+        timeframe: "2024",
+        role: "2nd Rank Winner",
+        achievements: [
+          <>Secured 2nd rank for Project - Radiology Assistant.</>,
         ],
         images: [],
       },
     ],
-  },
+  },  
   studies: {
     display: true,
     title: "Studies",
@@ -148,7 +175,7 @@ const about = {
       },
       {
         name: "University of California, Berkeley",
-        description: <>Spring Semester Abroad – AI Research and Entrepreneurship</>,
+        description: <>Startup Semester - Sutardja Center for Entrepreneurship & Technology</>,
       },
     ],
   },
