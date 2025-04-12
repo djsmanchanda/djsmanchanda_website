@@ -3,7 +3,7 @@ const baseURL = "www.djsmanchanda.com";
 const routes = {
   "/": true,
   "/about": true,
-  "/work": true,
+  "/work": false,
   "/blog": false,
   "/gallery": false,
 };
