@@ -53,7 +53,7 @@ const home = {
   headline: <>AI Engineer and builder of things</>,
   subline: (
     <>
-      I'm Divjot, currently studying Artificial Intelligence at <InlineCode>UC Berkeley</InlineCode>.
+      I'm Divjot Singh Manchanda, currently studying Artificial Intelligence at <InlineCode>UC Berkeley</InlineCode>.
       <br /> I explore cutting-edge AI research and build projects that connect ideas to impact.
     </>
   ),

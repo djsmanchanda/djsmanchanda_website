@@ -98,7 +98,18 @@ export default function Home() {
         </Column>
       </Column>
       <RevealFx translateY="16" delay={0.6}>
-        {/* <Projects range={[1, 1]} /> */}
+        <Flex fillWidth horizontal="center" vertical="center" paddingY="l">
+          <img
+            src="/images/under-construction.png"
+            alt="Site under construction"
+            style={{
+              maxWidth: "20%",
+              height: "auto",
+              borderRadius: "8px",
+              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+            }}
+          />
+        </Flex>
       </RevealFx>
       {routes["/blog"] && (
         <Flex fillWidth gap="24" mobileDirection="column">
