@@ -11,7 +11,15 @@
     height: fit-content;
     top: var(--static-space-64);
 }
+.avatarPositioning {
+    margin-left: -50px; // Pulls the avatar closer to the TOC
+}
 
+@media (--m) {
+    .avatarPositioning {
+      margin-left: 0; // Reset on mobile where TOC is hidden
+    }
+}
 @media (--s) {
     .avatar {
         top: auto;

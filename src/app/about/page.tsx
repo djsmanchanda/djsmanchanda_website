@@ -73,7 +73,7 @@ export default function About() {
     },
   ];
   return (
-    <Column maxWidth="m">
+    <Column maxWidth="l">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -98,11 +98,11 @@ export default function About() {
       />
       {about.tableOfContent.display && (
         <Column
-          left="0"
+          left="32"
           style={{ top: "50%", transform: "translateY(-50%)" }}
           position="fixed"
-          paddingLeft="24"
-          gap="32"
+          paddingLeft="8"
+          gap="16"
           hide="s"
         >
           <TableOfContents structure={structure} about={about} />
@@ -111,15 +111,19 @@ export default function About() {
       <Flex fillWidth mobileDirection="column" horizontal="center">
         {about.avatar.display && (
           <Column
-            className={styles.avatar}
+            className={`${styles.avatar} ${styles.avatarPositioning}`}
             minWidth="160"
-            paddingX="l"
-            paddingBottom="xl"
+            paddingX="m"
+            paddingBottom="l"
             gap="m"
-            flex={3}
+            flex={4}
             horizontal="center"
           >
-            <Avatar src={person.avatar} size="xl" />
+            <Avatar 
+              src={person.avatar} 
+              size="xl" 
+              style={{ width: "240px", height: "240px" }} // Adjust these values to your desired size
+            />
             <Flex gap="8" vertical="center">
               <Icon onBackground="accent-weak" name="globe" />
               {person.location}
@@ -139,7 +143,7 @@ export default function About() {
             )}
           </Column>
         )}
-        <Column className={styles.blockAlign} flex={9} maxWidth={40}>
+        <Column className={styles.blockAlign} flex={9} maxWidth={48}>
           <Column
             id={about.intro.title}
             fillWidth
@@ -223,14 +227,18 @@ export default function About() {
               <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="m">
                 {about.work.title}
               </Heading>
-              <Column fillWidth gap="l" marginBottom="40">
+              <Column fillWidth gap="l" marginBottom="40" style={{ maxWidth: "1200px", width: "100%", margin: "0 auto" }}>
                 {about.work.experiences.map((experience, index) => (
                   <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
                     <Flex fillWidth horizontal="space-between" vertical="end" marginBottom="4">
                       <Text id={experience.company} variant="heading-strong-l">
                         {experience.company}
                       </Text>
-                      <Text variant="heading-default-xs" onBackground="neutral-weak">
+                      <Text 
+                        variant="heading-default-xs" 
+                        onBackground="neutral-weak"
+                        style={{ whiteSpace: "nowrap" }} // Prevents the date from wrapping
+                      >
                         {experience.timeframe}
                       </Text>
                     </Flex>
@@ -249,7 +257,7 @@ export default function About() {
                       ))}
                     </Column>
                     {experience.images.length > 0 && (
-                      <Flex fillWidth paddingTop="m" paddingLeft="40" wrap>
+                      <Flex fillWidth paddingTop="m" paddingLeft="32" wrap>
                         {experience.images.map((image, index) => (
                           <Flex
                             key={index}
@@ -311,7 +319,7 @@ export default function About() {
                       ))}
                     </Column>
                     {experience.images.length > 0 && (
-                      <Flex fillWidth paddingTop="m" paddingLeft="40" wrap>
+                      <Flex fillWidth paddingTop="m" paddingLeft="32" wrap>
                         {experience.images.map((image, index) => (
                           <Flex
                             key={index}

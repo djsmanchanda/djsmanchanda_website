@@ -9,7 +9,7 @@ const person = {
   role: "AI Engineer & Researcher",
   avatar: "/images/avatar.jpg",
   location: "America/Los_Angeles", // UC Berkeley timezone
-  location2: "India/Mumbai", // UC Berkeley timezone
+  location2: "India/Mumbai", // India timezone
   languages: ["English", "Hindi"],
 };
 
@@ -94,7 +94,7 @@ const about = {
     experiences: [
       {
         company: "IIT Madras, CAMS IIT-M Fintech Innovation Lab, Chennai, Tamil Nadu",
-        timeframe: "Jun - Aug 24",
+        timeframe: "June 2024 - August 2024",
         role: "Research Intern",
         achievements: [
           <>Performed feasibility analysis to explore the integration of AI in financial modeling and fintech solutions.</>,
@@ -104,7 +104,7 @@ const about = {
       },
       {
         company: "Renault Nissan, Chennai, Tamil Nadu",
-        timeframe: "Sep - Nov 24",
+        timeframe: "September 2024 - November 24",
         role: "Technical Intern",
         achievements: [
           <>Developed an algorithm to evaluate past part vendors based on pricing, lead time, MOQ, quality, defect rates and other variables, enabling data-driven reordering decisions and improving time to make decisions by 60%.</>,
@@ -114,7 +114,7 @@ const about = {
       },
       {
         company: "FlowNow",
-        timeframe: "Jan 25 - Present",
+        timeframe: "February 25 - Present",
         role: "Technical Intern",
         achievements: [
           <>Working on the AI aspects of a WebApp designed to increase Attention and concentration for ADHD and Test Prep students.</>,
