@@ -1,3 +1,4 @@
+/*
 import { notFound } from "next/navigation";
 import { CustomMDX } from "@/components/mdx";
 import { getPosts } from "@/app/utils/utils";
@@ -114,3 +115,4 @@ export default function Blog({ params }: BlogParams) {
     </Column>
   );
 }
+*/
