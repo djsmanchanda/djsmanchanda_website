@@ -80,10 +80,11 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Divjot is an AI engineer, researcher, and student entrepreneur passionate about designing 
-        intelligent systems. He has worked on factory optimization at Renault-Nissan, Fintech
-        solutions at IIT Madras, and AI-driven health diagnostics. He is currently studying 
-        AI at SRMIST, Kattankulathur, and is working on research projects involving exosome-based medical diagnostics.
+        I am an AI engineer, researcher, and student entrepreneur passionate about designing 
+        intelligent systems. I have worked on factory supply-chain optimization at Renault-Nissan, designed 
+        Fintech solutions at IIT Madras, as well as worked on AI-driven health diagnostics tools. I am studying 
+        Artificial Intelligence at SRMIST, Kattankulathur, and am working on a research projects involving exosome-based
+        medical diagnostics at University of California, Berkeley.
       </>
     ),
   },
@@ -93,7 +94,7 @@ const about = {
     experiences: [
       {
         company: "IIT Madras, CAMS IIT-M Fintech Innovation Lab, Chennai, Tamil Nadu",
-        timeframe: "June 2024 - August 2024",
+        timeframe: "Jun - Aug 24",
         role: "Research Intern",
         achievements: [
           <>Performed feasibility analysis to explore the integration of AI in financial modeling and fintech solutions.</>,
@@ -103,7 +104,7 @@ const about = {
       },
       {
         company: "Renault Nissan, Chennai, Tamil Nadu",
-        timeframe: "September 2024 - November 2024",
+        timeframe: "Sep - Nov 24",
         role: "Technical Intern",
         achievements: [
           <>Developed an algorithm to evaluate past part vendors based on pricing, lead time, MOQ, quality, defect rates and other variables, enabling data-driven reordering decisions and improving time to make decisions by 60%.</>,
@@ -113,7 +114,7 @@ const about = {
       },
       {
         company: "FlowNow",
-        timeframe: "Jan 2025 - Present",
+        timeframe: "Jan 25 - Present",
         role: "Technical Intern",
         achievements: [
           <>Working on the AI aspects of a WebApp designed to increase Attention and concentration for ADHD and Test Prep students.</>,
