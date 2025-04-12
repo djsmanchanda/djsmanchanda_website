@@ -3,6 +3,17 @@ import MasonryGrid from "@/components/gallery/MasonryGrid";
 import { baseURL } from "@/app/resources";
 import { gallery, person } from "@/app/resources/content";
 
+// Define types for gallery image and person
+type GalleryImage = {
+  src: string;
+  alt: string;
+};
+
+type Person = {
+  name: string;
+  avatar: string;
+};
+
 export async function generateMetadata() {
   const title = gallery.title;
   const description = gallery.description;
@@ -45,17 +56,17 @@ export default function Gallery() {
             name: gallery.title,
             description: gallery.description,
             url: `https://${baseURL}/gallery`,
-            image: gallery.images.map((image) => ({
+            image: (gallery.images as GalleryImage[]).map((image) => ({
               "@type": "ImageObject",
               url: `${baseURL}${image.src}`,
               description: image.alt,
             })),
             author: {
               "@type": "Person",
-              name: person.name,
+              name: (person as Person).name,
               image: {
                 "@type": "ImageObject",
-                url: `${baseURL}${person.avatar}`,
+                url: `${baseURL}${(person as Person).avatar}`,
               },
             },
           }),
