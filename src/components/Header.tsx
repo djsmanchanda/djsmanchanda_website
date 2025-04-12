@@ -55,7 +55,7 @@ export const Header = () => {
         as="header"
         zIndex={9}
         fillWidth
-        padding="8"
+        padding="12"
         horizontal="center"
       >
         <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
@@ -65,9 +65,9 @@ export const Header = () => {
           <Flex
             background="surface"
             border="neutral-medium"
-            radius="m-4"
+            radius="l-8"
             shadow="l"
-            padding="8"
+            padding="12"
             horizontal="center"
           >
             <Flex gap="4" vertical="center" textVariant="body-default-s" paddingRight="8">
