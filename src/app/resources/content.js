@@ -9,6 +9,7 @@ const person = {
   role: "AI Engineer & Researcher",
   avatar: "/images/avatar.jpg",
   location: "America/Los_Angeles", // UC Berkeley timezone
+  location2: "India/Mumbai", // UC Berkeley timezone
   languages: ["English", "Hindi"],
 };
 
@@ -91,6 +92,32 @@ const about = {
     experiences: [
       {
         company: "Renault-Nissan AI Lab",
+        timeframe: "2024",
+        role: "AI Intern",
+        achievements: [
+          <>Built a recommendation system for optimal vendor selection across multiple metrics.</>,
+          <>Developed a chatbot to help factory teams understand vendor quality data.</>,
+        ],
+        images: [],
+      },
+      {
+        company: "IIT Bombay",
+        timeframe: "2023",
+        role: "Hackathon Finalist - PULSE",
+        achievements: [
+          <>Won 2nd place out of 500 teams, building a medical alert AI platform.</>,
+          <>Worked on real-time diagnostics and health signal analysis.</>,
+        ],
+        images: [],
+      },
+    ],
+  },
+  hackathon: {
+    display: true,
+    title: "Hackathons Won",
+    experiences: [
+      {
+        company: "Pulse Hackathon - IIT Bombay",
         timeframe: "2024",
         role: "AI Intern",
         achievements: [
