@@ -48,7 +48,7 @@ const social = [
 
 const home = {
   label: "Home",
-  title: `${person.name}'s Portfolio`,
+  title: `${person.name}`,
   description: `Portfolio website showcasing my work as an ${person.role}`,
   headline: <>AI Engineer and builder of things</>,
   subline: (
