@@ -3,11 +3,11 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import { Fade, Flex, Line, ToggleButton } from "@/once-ui/components";
+import { Fade, Flex, Line, ToggleButton, IconButton } from "@/once-ui/components";
 import styles from "@/components/Header.module.scss";
 
 import { routes, display } from "@/app/resources";
-import { person, home, about, blog, work, gallery } from "@/app/resources/content";
+import { person, social, home, about, blog, work, gallery } from "@/app/resources/content";
 
 type TimeDisplayProps = {
   timeZone: string;
@@ -67,14 +67,15 @@ export const Header = () => {
             border="neutral-medium"
             radius="m-4"
             shadow="l"
-            padding="4"
+            padding="8"
             horizontal="center"
           >
-            <Flex gap="4" vertical="center" textVariant="body-default-s">
+            <Flex gap="4" vertical="center" textVariant="body-default-s" paddingRight="8">
               {routes["/"] && (
                 <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
               )}
               <Line vert maxHeight="24" />
+
               {routes["/about"] && (
                 <>
                   <ToggleButton
@@ -92,6 +93,7 @@ export const Header = () => {
                   />
                 </>
               )}
+
               {routes["/work"] && (
                 <>
                   <ToggleButton
@@ -109,6 +111,7 @@ export const Header = () => {
                   />
                 </>
               )}
+
               {routes["/blog"] && (
                 <>
                   <ToggleButton
@@ -126,6 +129,7 @@ export const Header = () => {
                   />
                 </>
               )}
+
               {routes["/gallery"] && (
                 <>
                   <ToggleButton
@@ -143,12 +147,29 @@ export const Header = () => {
                   />
                 </>
               )}
+              <Line vert maxHeight="24" />
+              {/* Social buttons group */}
+              <Flex gap="16" vertical="center" paddingLeft="8">
+                {social.map(
+                  (item) =>
+                    item.link && (
+                      <IconButton
+                        key={item.name}
+                        href={item.link}
+                        icon={item.icon}
+                        tooltip={item.name}
+                        size="s"
+                        variant="ghost"
+                      />
+                    ),
+                )}
+              </Flex>
             </Flex>
           </Flex>
         </Flex>
         <Flex fillWidth horizontal="end" vertical="center">
           <Flex
-            paddingRight="12"
+            paddingRight="16"
             horizontal="end"
             vertical="center"
             textVariant="body-default-s"
