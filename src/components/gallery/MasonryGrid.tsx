@@ -32,7 +32,13 @@ export default function MasonryGrid() {
           sizes="(max-width: 560px) 100vw, (max-width: 1024px) 50vw, (max-width: 1440px) 33vw, 25vw"
           key={index}
           radius="m"
-          aspectRatio={image.orientation === "horizontal" ? "16 / 9" : "9 / 16"}
+          aspectRatio={
+            image.orientation === "horizontal" ? "16 / 9" :
+            image.orientation === "vertical" ? "9 / 16" :
+            image.orientation === "landscape" ? "4 / 3" :
+            image.orientation === "portrait" ? "3 / 4" :
+            "1 / 1" // default to square
+          }          
           src={image.src}
           alt={image.alt}
           className={styles.gridItem}

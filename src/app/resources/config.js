@@ -1,11 +1,11 @@
-const baseURL = "www.djsmanchanda.com";
+const baseURL = "http://www.djsmanchanda.com";
 
 const routes = {
   "/": true,
   "/about": true,
   "/work": false,
   "/blog": false,
-  "/gallery": false,
+  "/gallery": true,
 };
 
 // Enable password protection on selected routes

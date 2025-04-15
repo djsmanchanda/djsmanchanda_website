@@ -217,9 +217,60 @@ const work = {
 
 const gallery = {
   label: "Gallery",
-  title: "My photo gallery",
-  description: `Moments captured by ${person.name}`,
-  images: [],
+  title: "lorem ipsum",
+  description: `ipsum lorem`,
+  images: [
+    {
+      src: "/images/gallery/img-10.jpg",
+      alt: "image",
+      orientation: "portrait",
+    },
+    {
+      src: "/images/gallery/img-01.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/img-02.jpg",
+      alt: "image",
+      orientation: "square",
+    },
+    {
+      src: "/images/gallery/img-03.jpg",
+      alt: "image",
+      orientation: "landscape",
+    },
+    {
+      src: "/images/gallery/img-04.jpg",
+      alt: "image",
+      orientation: "square",
+    },
+    {
+      src: "/images/gallery/img-05.jpeg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/img-06.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/img-07.jpg",
+      alt: "image",
+      orientation: "square",
+    },
+    {
+      src: "/images/gallery/img-08.jpg",
+      alt: "image",
+      orientation: "portrait",
+    },
+    {
+      src: "/images/gallery/img-09.jpg",
+      alt: "image",
+      orientation: "portrait",
+    },
+  ],
 };
 
 export { person, social, newsletter, home, about, blog, work, gallery };
