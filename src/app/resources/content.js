@@ -26,6 +26,11 @@ const newsletter = {
 
 const social = [
   {
+    name: "Resume",
+    icon: "resume",
+    link: "www.djsmanchanda.com/resume.pdf",
+  },
+  {
     name: "GitHub",
     icon: "github",
     link: "https://github.com/djsmanchanda",

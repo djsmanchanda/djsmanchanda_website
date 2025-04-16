@@ -32,6 +32,7 @@ import {
   PiBookBookmarkDuotone,
   PiImageDuotone,
 } from "react-icons/pi";
+import { IoDocumentText } from "react-icons/io5";
 
 import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
@@ -50,6 +51,7 @@ export const iconLibrary: Record<string, IconType> = {
   errorCircle: HiExclamationCircle,
   checkCircle: HiCheckCircle,
   email: HiEnvelope,
+  resume: IoDocumentText,
   globe: HiMiniGlobeAsiaAustralia,
   person: PiUserCircleDuotone,
   grid: PiGridFourDuotone,
