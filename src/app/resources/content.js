@@ -28,7 +28,7 @@ const social = [
   {
     name: "Resume",
     icon: "resume",
-    link: "www.djsmanchanda.com/resume.pdf",
+    link: "Divjot_Singh_Manchanda_Resume_Dec_2024.pdf",
   },
   {
     name: "GitHub",

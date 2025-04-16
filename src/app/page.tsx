@@ -98,7 +98,7 @@ export default function Home() {
               <Button
                 id="resume"
                 data-border="rounded"
-                href="/resume.pdf"
+                href="/Divjot_Singh_Manchanda_Resume_Dec_2024.pdf"
                 variant="primary"
                 size="m"
                 target="_blank"
