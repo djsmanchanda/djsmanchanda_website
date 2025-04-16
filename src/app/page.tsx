@@ -111,6 +111,7 @@ export default function Home() {
           </RevealFx>
         </Column>
       </Column>
+      {/*
       <RevealFx translateY="16" delay={0.6}>
         <Flex fillWidth horizontal="center" vertical="center" paddingY="l">
           <img
@@ -125,6 +126,7 @@ export default function Home() {
           />
         </Flex>
       </RevealFx>
+      */}
       {routes["/blog"] && (
         <Flex fillWidth gap="24" mobileDirection="column">
           <Flex flex={1} paddingLeft="l">
