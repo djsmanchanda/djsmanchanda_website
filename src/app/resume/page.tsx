@@ -1,53 +1,27 @@
+"use client";  // Add this to enable client-side functionality
+
 import React from "react";
 
 const ResumePage = () => {
-  // Detect mobile devices with a simple user agent check.
-  const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+  const handleOpenInNewTab = () => {
+    window.open("/Divjot_Singh_Manchanda_Resume_Dec_2024.pdf", "_blank", "noopener,noreferrer");
+  };
 
   return (
-    <div style={{ height: "100%", width: "100%", position: "relative" }}>
-      { !isMobile ? (
-        <iframe
-          src="/Divjot_Singh_Manchanda_Resume_Dec_2024.pdf"
-          style={{
-            width: "100%",
-            height: "100%",
-            border: "none",
-            borderRadius: "12px",
-            boxShadow: "0 0 15px rgba(0,0,0,0.1)",
-          }}
-          title="Resume Viewer"
-        />
-      ) : (
-        <object
-          data="/Divjot_Singh_Manchanda_Resume_Dec_2024.pdf"
-          type="application/pdf"
-          style={{
-            width: "100%",
-            height: "100%",
-            border: "none",
-            borderRadius: "12px",
-            boxShadow: "0 0 15px rgba(0,0,0,0.1)",
-          }}
-        >
-          <p>
-            Your device does not support embedded PDFs. Please{" "}
-            <a href="/Divjot_Singh_Manchanda_Resume_Dec_2024.pdf">
-              download the PDF
-            </a>{" "}
-            to view it.
-          </p>
-        </object>
-      )}
-
+    <div style={{ height: "100%", width: "100%", padding: "0rem", position: "relative" }}>
+      <iframe
+        src="/Divjot_Singh_Manchanda_Resume_Dec_2024.pdf"
+        style={{
+          width: "100%",
+          height: "100%",
+          border: "none",
+          borderRadius: "12px",
+          boxShadow: "0 0 15px rgba(0,0,0,0.1)",
+        }}
+        title="Resume Viewer"
+      />
       <button
-        onClick={() =>
-          window.open(
-            "/Divjot_Singh_Manchanda_Resume_Dec_2024.pdf",
-            "_blank",
-            "noopener,noreferrer"
-          )
-        }
+        onClick={handleOpenInNewTab}
         style={{
           position: "absolute",
           top: "12px",
