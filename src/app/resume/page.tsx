@@ -3,25 +3,53 @@
 import React from "react";
 
 const ResumePage = () => {
-  const handleOpenInNewTab = () => {
-    window.open("/Divjot_Singh_Manchanda_Resume_Dec_2024.pdf", "_blank", "noopener,noreferrer");
-  };
+  // Detect mobile devices with a simple user agent check.
+  const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 
   return (
-    <div style={{ height: "100%", width: "100%", padding: "0rem", position: "relative" }}>
-      <iframe
-        src="/Divjot_Singh_Manchanda_Resume_Dec_2024.pdf"
-        style={{
-          width: "100%",
-          height: "100%",
-          border: "none",
-          borderRadius: "12px",
-          boxShadow: "0 0 15px rgba(0,0,0,0.1)",
-        }}
-        title="Resume Viewer"
-      />
+    <div style={{ height: "100%", width: "100%", position: "relative" }}>
+      { !isMobile ? (
+        <iframe
+          src="/Divjot_Singh_Manchanda_Resume_Dec_2024.pdf"
+          style={{
+            width: "100%",
+            height: "100%",
+            border: "none",
+            borderRadius: "20px",
+            boxShadow: "0 0 15px rgba(0,0,0,0.1)",
+          }}
+          title="Resume Viewer"
+        />
+      ) : (
+        <object
+          data="/Divjot_Singh_Manchanda_Resume_Dec_2024.pdf"
+          type="application/pdf"
+          style={{
+            width: "100%",
+            height: "100%",
+            border: "none",
+            borderRadius: "20px",
+            boxShadow: "0 0 15px rgba(0,0,0,0.1)",
+          }}
+        >
+          <p>
+            Your device does not support embedded PDFs. Please{" "}
+            <a href="/Divjot_Singh_Manchanda_Resume_Dec_2024.pdf">
+              download the PDF
+            </a>{" "}
+            to view it.
+          </p>
+        </object>
+      )}
+
       <button
-        onClick={handleOpenInNewTab}
+        onClick={() =>
+          window.open(
+            "/Divjot_Singh_Manchanda_Resume_Dec_2024.pdf",
+            "_blank",
+            "noopener,noreferrer"
+          )
+        }
         style={{
           position: "absolute",
           top: "12px",
@@ -30,7 +58,7 @@ const ResumePage = () => {
           backgroundColor: "#0066cc",
           color: "white",
           border: "none",
-          borderRadius: "4px",
+          borderRadius: "6px",
           cursor: "pointer",
           zIndex: 999,
           boxShadow: "0 2px 5px rgba(0,0,0,0.2)",
