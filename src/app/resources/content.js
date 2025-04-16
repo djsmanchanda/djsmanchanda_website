@@ -26,11 +26,6 @@ const newsletter = {
 
 const social = [
   {
-    name: "Resume",
-    icon: "resume",
-    link: "Divjot_Singh_Manchanda_Resume_Dec_2024.pdf",
-  },
-  {
     name: "GitHub",
     icon: "github",
     link: "https://github.com/djsmanchanda",
