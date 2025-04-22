@@ -270,6 +270,11 @@ const gallery = {
       alt: "image",
       orientation: "portrait",
     },
+    {
+      src: "/images/gallery/img-11.jpg",
+      alt: "image",
+      orientation: "portrait",
+    }
   ],
 };
 
