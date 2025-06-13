@@ -54,8 +54,8 @@ const home = {
   headline: <>AI Engineer and builder of things</>,
   subline: (
     <>
-      I'm Divjot Singh Manchanda, currently studying Artificial Intelligence at <InlineCode>UC Berkeley</InlineCode>.
-      <br /> I explore cutting-edge AI research and build projects that connect ideas to impact.
+      I'm Divjot Singh Manchanda, a 7 time hackathon winner, currently studying Artificial Intelligence at <InlineCode>SRM Institute of Science and Technology</InlineCode>.
+      <br /> I explore cutting-edge AI research and build projects that connect ideas to impact. Previously, at <InlineCode>UC Berkeley</InlineCode>, for the SCET Startup Semester.
     </>
   ),
 };
