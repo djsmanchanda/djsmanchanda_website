@@ -11,10 +11,17 @@ import { person, social, home, about, blog, work, gallery } from "@/app/resource
 
 type TimeDisplayProps = {
   timeZone: string;
-  locale?: string; // Optionally allow locale, defaulting to 'en-GB'
+  locale?: string;
+  locationLabel?: string; // Optional label to show the location name
+  showSeconds?: boolean; // Option to hide seconds for cleaner look
 };
 
-const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en-GB" }) => {
+const TimeDisplay: React.FC<TimeDisplayProps> = ({ 
+  timeZone, 
+  locale = "en-GB", 
+  locationLabel,
+  showSeconds = true 
+}) => {
   const [currentTime, setCurrentTime] = useState("");
 
   useEffect(() => {
@@ -24,7 +31,7 @@ const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en-GB" })
         timeZone,
         hour: "2-digit",
         minute: "2-digit",
-        second: "2-digit",
+        ...(showSeconds && { second: "2-digit" }),
         hour12: false,
       };
       const timeString = new Intl.DateTimeFormat(locale, options).format(now);
@@ -35,9 +42,18 @@ const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en-GB" })
     const intervalId = setInterval(updateTime, 1000);
 
     return () => clearInterval(intervalId);
-  }, [timeZone, locale]);
+  }, [timeZone, locale, showSeconds]);
 
-  return <>{currentTime}</>;
+  return (
+    <Flex gap="4" vertical="center">
+      {locationLabel && (
+        <span style={{ fontSize: '0.75rem', opacity: 0.7 }}>
+          {locationLabel}
+        </span>
+      )}
+      <span>{currentTime}</span>
+    </Flex>
+  );
 };
 
 export default TimeDisplay;
@@ -59,7 +75,19 @@ export const Header = () => {
         horizontal="center"
       >
         <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
-          {display.location && <Flex hide="s">{person.location}</Flex>}
+          {display.location && (
+            <Flex hide="s" direction="column" gap="4">
+              <span>San Francisco</span>
+                            {display.time && (
+                <>
+                  <TimeDisplay 
+                    timeZone={person.location} 
+                    showSeconds={true}
+                  />
+                </>
+              )}
+            </Flex>
+          )}
         </Flex>
         <Flex fillWidth horizontal="center">
           <Flex
@@ -190,9 +218,19 @@ export const Header = () => {
             horizontal="end"
             vertical="center"
             textVariant="body-default-s"
-            gap="20"
+            gap="8"
           >
-            <Flex hide="s">{display.time && <TimeDisplay timeZone={person.location} />}</Flex>
+            <Flex hide="s" direction="column" gap="4">
+              {display.time && (
+                <>
+                  <span>Mumbai</span>
+                  <TimeDisplay 
+                    timeZone={person.location2}
+                    showSeconds={true}
+                  />
+                </>
+              )}
+            </Flex>
           </Flex>
         </Flex>
       </Flex>

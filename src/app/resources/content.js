@@ -9,7 +9,7 @@ const person = {
   role: "AI Engineer & Researcher",
   avatar: "/images/avatar.jpg",
   location: "America/Los_Angeles", // UC Berkeley timezone
-  location2: "India/Mumbai", // India timezone
+  location2: "Asia/Kolkata", // India timezone
   languages: ["English", "Hindi"],
 };
 
