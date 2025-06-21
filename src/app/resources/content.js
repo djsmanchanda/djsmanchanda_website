@@ -41,9 +41,19 @@ const social = [
     link: "https://x.com/djsmanchanda",
   },
   {
+    name: "Instagram",
+    icon: "instagram",
+    link: "instagram.com/djsmanchanda",
+  },
+  {
     name: "Email",
     icon: "email",
-    link: "mailto:djsmanchanda@berkeley.edu",
+    link: "mailto:djsmanchanda@gmail.com",
+  },
+  {
+    name: "Buy me a coffee",
+    icon: "coffee",
+    link: "coff.ee/djsmanchanda",
   },
 ];
 

@@ -81,7 +81,15 @@ export default function About() {
   ];
 
   return (
-    <Column maxWidth="l">
+    <Column 
+      maxWidth="l" 
+      style={{ 
+        width: about.tableOfContent.display ? "calc(100% - 220px)" : "100%",
+        marginLeft: about.tableOfContent.display ? "20% - 220px" : "0",
+        transition: "width 0.3s ease, margin-left 0.3s ease"
+      }}
+      className="m-width-full m-margin-left-0"
+    >
       <script
         type="application/ld+json"
         suppressHydrationWarning

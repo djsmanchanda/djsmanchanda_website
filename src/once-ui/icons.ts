@@ -34,8 +34,8 @@ import {
 } from "react-icons/pi";
 import { IoDocumentText } from "react-icons/io5";
 
-import { FaDiscord, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
-
+import { FaDiscord, FaGithub, FaLinkedin, FaInstagram, FaXTwitter } from "react-icons/fa6";
+import { BiSolidCoffeeAlt } from "react-icons/bi";
 export const iconLibrary: Record<string, IconType> = {
   chevronUp: HiChevronUp,
   chevronDown: HiChevronDown,
@@ -67,6 +67,8 @@ export const iconLibrary: Record<string, IconType> = {
   github: FaGithub,
   linkedin: FaLinkedin,
   x: FaXTwitter,
+  instagram: FaInstagram,
+  coffee: BiSolidCoffeeAlt,
   clipboard: HiClipboard,
   arrowUpRightFromSquare: HiArrowTopRightOnSquare,
 };
