@@ -53,7 +53,7 @@ const social = [
   {
     name: "Buy me a coffee",
     icon: "coffee",
-    link: "coff.ee/djsmanchanda",
+    link: "https://coff.ee/djsmanchanda",
   },
 ];
 
