@@ -43,7 +43,7 @@ const social = [
   {
     name: "Instagram",
     icon: "instagram",
-    link: "instagram.com/djsmanchanda",
+    link: "https://instagram.com/djsmanchanda",
   },
   {
     name: "Email",
