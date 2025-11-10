@@ -6,6 +6,7 @@ import {
   Heading,
   Icon,
   IconButton,
+  RevealFx,
   SmartImage,
   Tag,
   Text,
@@ -44,9 +45,9 @@ export async function generateMetadata() {
   };
 }
 
-// Section wrapper with consistent spacing
+// Section wrapper with consistent spacing and card styling
 const Section = ({ children }) => (
-  <Column marginTop="32" marginBottom="32">
+  <Column className={styles.section} gap="m">
     {children}
   </Column>
 );

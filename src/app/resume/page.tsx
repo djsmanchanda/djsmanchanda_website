@@ -10,7 +10,7 @@ const ResumePage = () => {
     <div style={{ height: "100%", width: "100%", position: "relative" }}>
       { !isMobile ? (
         <iframe
-          src="/Divjot_Singh_Manchanda_Resume_Dec_2024.pdf"
+          src="/Divjot_Manchanda_Resume_Nov25.pdf"
           style={{
             width: "100%",
             height: "100%",
@@ -22,7 +22,7 @@ const ResumePage = () => {
         />
       ) : (
         <object
-          data="/Divjot_Singh_Manchanda_Resume_Dec_2024.pdf"
+          data="/Divjot_Manchanda_Resume_Nov25.pdf"
           type="application/pdf"
           style={{
             width: "100%",
@@ -34,7 +34,7 @@ const ResumePage = () => {
         >
           <p>
             Your device does not support embedded PDFs. Please{" "}
-            <a href="/Divjot_Singh_Manchanda_Resume_Dec_2024.pdf">
+            <a href="/Divjot_Manchanda_Resume_Nov25.pdf">
               download the PDF
             </a>{" "}
             to view it.
@@ -45,7 +45,7 @@ const ResumePage = () => {
       <button
         onClick={() =>
           window.open(
-            "/Divjot_Singh_Manchanda_Resume_Dec_2024.pdf",
+            "/Divjot_Manchanda_Resume_Nov25.pdf",
             "_blank",
             "noopener,noreferrer"
           )

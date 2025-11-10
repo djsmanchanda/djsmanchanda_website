@@ -61,10 +61,14 @@ const home = {
   label: "Home",
   title: `${person.name}`,
   description: `Portfolio website showcasing my work as an ${person.role}`,
-  headline: <>AI Engineer and builder of things</>,
+  headline: <>
+    <span style={{whiteSpace: 'nowrap'}}>{person.name}</span>
+    <br />
+    <span style={{fontSize: '0.60em', whiteSpace: 'nowrap'}}>AI Engineer and builder of things</span>
+  </>,
   subline: (
     <>
-      I'm Divjot Singh Manchanda, a 7 time hackathon winner, currently studying Artificial Intelligence at <InlineCode>SRM Institute of Science and Technology</InlineCode>.
+      I'm a 7 time hackathon winner, currently studying Artificial Intelligence at <InlineCode>SRM Institute of Science and Technology</InlineCode>.
       <br /> I explore cutting-edge AI research and build projects that connect ideas to impact. Previously, at <InlineCode>UC Berkeley</InlineCode>, for the SCET Startup Semester.
     </>
   ),

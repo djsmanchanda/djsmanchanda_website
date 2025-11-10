@@ -1,3 +1,4 @@
+// next.config.mjs
 import mdx from "@next/mdx";
 
 const withMDX = mdx({
@@ -8,6 +9,25 @@ const withMDX = mdx({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
+
+  experimental: {
+    instrumentationHook: true,   // ✅ enable instrumentation.ts
+    optimizePackageImports: ['@once-ui/components', 'react-icons'],
+  },
+
+  // Performance optimizations
+  swcMinify: true,
+
+  // Optimize images
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    unoptimized: process.env.NODE_ENV === 'development',
+  },
+
+  // Sass options to suppress deprecation warnings
+  sassOptions: {
+    silenceDeprecations: ['legacy-js-api'],
+  },
 };
 
 export default withMDX(nextConfig);
