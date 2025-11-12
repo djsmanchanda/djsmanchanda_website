@@ -198,8 +198,9 @@ const Background = forwardRef<HTMLDivElement, BackgroundProps>(
             style={{
               ["--gradient-position-x" as string]: `${adjustedX}%`,
               ["--gradient-position-y" as string]: `${adjustedY}%`,
-              ["--gradient-width" as string]:
-                gradient.width != null ? `${gradient.width / 4}%` : "25%",
+              ["--gradient-width" as string]: gradient.width != null
+                ? `${Math.round(gradient.width / 4)}%`
+                : "25%",
               ["--gradient-height" as string]:
                 gradient.height != null ? `${gradient.height / 4}%` : "25%",
               ["--gradient-tilt" as string]: gradient.tilt != null ? `${gradient.tilt}deg` : "0deg",
@@ -239,7 +240,13 @@ const Background = forwardRef<HTMLDivElement, BackgroundProps>(
             className={styles.lines}
             opacity={lines.opacity}
             style={{
-              backgroundImage: `repeating-linear-gradient(45deg, var(--brand-on-background-weak) 0, var(--brand-on-background-weak) 0.5px, var(--static-transparent) 0.5px, var(--static-transparent) ${dots.size})`,
+              backgroundImage: `repeating-linear-gradient(
+                45deg,
+                var(--brand-on-background-weak) 0,
+                var(--brand-on-background-weak) 1px,
+                var(--static-transparent) 1px,
+                var(--static-transparent) ${lines.size ?? "var(--static-space-24)"}
+              )`,
             }}
           />
         )}

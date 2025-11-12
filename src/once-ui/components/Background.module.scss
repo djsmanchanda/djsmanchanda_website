@@ -2,26 +2,42 @@
   mask-size: 100% 100%;
   mask-image: radial-gradient(
     var(--mask-radius) at var(--mask-position-x) var(--mask-position-y),
-    black 0%,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.65) 55%,
+    rgba(0, 0, 0, 0.3) 78%,
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    var(--mask-radius) at var(--mask-position-x) var(--mask-position-y),
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.65) 55%,
+    rgba(0, 0, 0, 0.3) 78%,
     transparent 100%
   );
 }
 
 .gradient {
   background: radial-gradient(
-        ellipse var(--gradient-width) var(--gradient-height) at var(--gradient-position-x) var(--gradient-position-y),
-        var(--gradient-color-start),
-        var(--gradient-color-end)
-      );
+    ellipse var(--gradient-width) var(--gradient-height) at var(--gradient-position-x) var(--gradient-position-y),
+    var(--gradient-color-start) 0%,
+    color-mix(in srgb, var(--gradient-color-start) 70%, var(--gradient-color-end)) 35%,
+    color-mix(in srgb, var(--gradient-color-start) 40%, var(--gradient-color-end)) 65%,
+    var(--gradient-color-end) 100%
+  );
   width: 400%;
   height: 400%;
   left: -150%;
   top: -150%;
-  transform: rotate(var(--gradient-tilt));
+  transform: rotate(var(--gradient-tilt)) translateZ(0);
   transform-origin: center;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  filter: blur(0.24px);
 }
 
 .dots {
   background-image: radial-gradient(var(--dots-color) 1px, var(--static-transparent) 1px);
   background-size: var(--dots-size) var(--dots-size);
+  will-change: opacity, background-position;
 }

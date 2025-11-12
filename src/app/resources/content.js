@@ -223,10 +223,15 @@ const blog = {
   description: `Read what ${person.name} has been exploring recently`,
 };
 
-const work = {
-  label: "Work",
+const projects = {
+  label: "Projects",
   title: "My projects",
   description: `AI and robotics projects by ${person.name}`,
+};
+
+const work = {
+  label: "Work",
+  title: "Work Experience",
 };
 
 const gallery = {
@@ -292,4 +297,54 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+const internships = {
+  label: "Internships",
+  title: "Work Experience",
+  description: `Professional internship experiences by ${person.name}`,
+  experiences: [
+    {
+      company: "IIT Madras, CAMS IIT-M Fintech Innovation Lab",
+      location: "Chennai, Tamil Nadu",
+      role: "Research Intern",
+      timeframe: "June 2024 - August 2024",
+      description: "Explored how large language models (LLMs) can transform financial analytics. Fine-tuned a Retrieval-Augmented Generation (RAG) pipeline on domain-specific datasets to improve data-driven modeling and automated report generation.",
+      achievements: [
+        "Conducted feasibility analysis across multiple AI-driven financial models to assess LLM integration in fintech workflows",
+        "Fine-tuned a RAG-based LLM on financial datasets with web-search capabilities, improving retrieval precision by 30%",
+        "Evaluated the system's precision on real-world fintech use cases, deepening understanding of AI in risk modeling, compliance checks, and financial decision systems"
+      ],
+      tags: ["AI/ML", "LLMs", "RAG", "Fintech", "Python"]
+    },
+    {
+      company: "Renault Nissan",
+      location: "Chennai, Tamil Nadu",
+      role: "Technical Intern",
+      timeframe: "September 2024 - November 2024",
+      description: "Designed a data intelligence system to streamline vendor selection and supply chain decisions as part of the Renault-Nissan Industry Innovation Lab.",
+      achievements: [
+        "Built an algorithm that analyzed 200+ supplier histories—including price consistency, defect rates, and delivery timelines—to recommend the most reliable partners",
+        "Engineered vendor evaluation system reducing decision-making time by 20%",
+        "Created a chatbot interface to provide instant access to vendor insights, cutting manual lookup time by 40%",
+        "Demonstrated how AI-driven analytics can optimize manufacturing operations in large-scale automotive ecosystems"
+      ],
+      tags: ["Data Analytics", "AI", "Supply Chain", "Chatbot", "Python"]
+    },
+    {
+      company: "FlowNow",
+      location: "Berkeley, California",
+      role: "Technical Intern",
+      timeframe: "March 2025 - June 2025",
+      description: "Developed an agentic AI system for a neuroscience-based edtech startup from UC Berkeley's SCET network that personalizes reading comprehension through adaptive question generation and focus tracking.",
+      achievements: [
+        "Designed an agentic AI system generating context-aware questions from user-submitted books to assess comprehension",
+        "Built model analyzing user attention span using behavioral metrics and dynamically adjusted task complexity",
+        "Modeled user attention spans via behavioral metrics, delivering real-time feedback and engagement analytics",
+        "Integrated a Tawk.to-based support agent to improve onboarding efficiency, reducing response times by 35%",
+        "Combined interests in cognitive AI, product design, and user psychology in building AI-driven learning systems"
+      ],
+      tags: ["AI", "EdTech", "NLP", "User Analytics", "Product Design"]
+    }
+  ]
+};
+
+export { person, social, newsletter, home, about, blog, projects, work, gallery, internships };

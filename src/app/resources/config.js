@@ -3,6 +3,7 @@ const baseURL = "http://www.djsmanchanda.com";
 const routes = {
   "/": true,
   "/about": true,
+  "/projects": true,
   "/work": true,
   "/blog": false,
   "/gallery": true,
@@ -12,7 +13,7 @@ const routes = {
 // Enable password protection on selected routes
 // Set password in the .env file, refer to .env.example
 const protectedRoutes = {
-  "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
+  "/projects/automate-design-handovers-with-a-figma-to-code-pipeline": true,
 };
 
 const style = {
@@ -32,7 +33,7 @@ const effects = {
     cursor: true,
     x: 0,
     y: 0,
-    radius: 75,
+    radius: 60,
   },
   gradient: {
     display: true,

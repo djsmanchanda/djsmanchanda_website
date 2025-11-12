@@ -8,9 +8,9 @@ import { baseURL, routes } from "@/app/resources";
 import { home, about, person, newsletter } from "@/app/resources/content";
 import { Mailchimp } from "@/components";
 import { Posts } from "@/components/blog/Posts";
-import WarpName from "@/components/WarpName";
 import TechBadge from "@/components/TechBadge";
 import FeaturedProjectCard from "@/components/FeaturedProjectCard";
+import FloatingParticles from "@/components/FloatingParticles";
 
 export async function generateMetadata() {
   const title = home.title;
@@ -44,13 +44,12 @@ export async function generateMetadata() {
 export default function Home() {
   return (
     <>
-      {/* Animated gradient background */}
+      {/* Floating particles background */}
+      <FloatingParticles />
+
+      {/* Animation keyframes */}
       <style dangerouslySetInnerHTML={{
         __html: `
-          @keyframes gradientShift {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-          }
           @keyframes fadeInUp {
             from {
               opacity: 0;
@@ -63,18 +62,6 @@ export default function Home() {
           }
         `
       }} />
-      <div
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          zIndex: -1,
-          background: 'radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255, 119, 168, 0.1) 0%, transparent 50%), radial-gradient(circle at 40% 20%, rgba(138, 180, 248, 0.1) 0%, transparent 50%)',
-          animation: 'gradientShift 15s ease infinite',
-        }}
-      />
 
       <Column maxWidth="m" gap="xl" horizontal="center">
         <script
@@ -215,7 +202,7 @@ export default function Home() {
                 Featured Projects
               </Heading>
               <Button
-                href="/work"
+                href="/projects"
                 variant="tertiary"
                 size="s"
                 arrowIcon
@@ -226,12 +213,22 @@ export default function Home() {
 
             <Flex fillWidth gap="m" wrap mobileDirection="column">
               <FeaturedProjectCard
+                title="Youtrition"
+                description="AI-powered personalized nutrition platform with real-time health data integration. Features 3-layered recommendation engine and predictive analytics dashboard."
+                tags={['Next.js', 'AI/ML', 'TensorFlow']}
+                gradientColors={{
+                  start: 'rgba(16, 185, 129, 0.05)',
+                  end: 'rgba(5, 150, 105, 0.05)'
+                }}
+                link="https://youtrition.djsmanchanda.com"
+              />
+              <FeaturedProjectCard
                 title="F1 Championship Simulator"
                 description="Full-stack F1 prediction platform with real-time data caching and Monte Carlo simulations. Features Cloudflare Workers backend and interactive scenario modeling."
-                tags={['React', 'TypeScript', 'Cloudflare Workers']}
+                tags={['React', 'TypeScript', 'Cloudflare']}
                 gradientColors={{
-                  start: 'rgba(220, 38, 38, 0.05)',
-                  end: 'rgba(239, 68, 68, 0.05)'
+                  start: 'rgba(239, 68, 68, 0.05)',
+                  end: 'rgba(185, 28, 28, 0.05)'
                 }}
                 link="https://f1.djsmanchanda.com"
               />
@@ -240,20 +237,133 @@ export default function Home() {
                 description="2nd place winner at IIT Bombay Pulse Hackathon among 500+ teams. AI-powered fashion recommendation system."
                 tags={['AI/ML', 'Computer Vision']}
                 gradientColors={{
-                  start: 'rgba(102, 126, 234, 0.05)',
-                  end: 'rgba(118, 75, 162, 0.05)'
+                  start: 'rgba(168, 85, 247, 0.05)',
+                  end: 'rgba(236, 72, 153, 0.05)'
                 }}
+                link="https://github.com/djsmanchanda/VogueFusion_Pulse"
               />
               <FeaturedProjectCard
                 title="RadixAI"
                 description="1st place winner at HackStreet 2.0. AI-powered radiology assistant for medical diagnostics."
                 tags={['Healthcare', 'Deep Learning']}
                 gradientColors={{
-                  start: 'rgba(138, 180, 248, 0.05)',
-                  end: 'rgba(102, 126, 234, 0.05)'
+                  start: 'rgba(59, 130, 246, 0.05)',
+                  end: 'rgba(37, 99, 235, 0.05)'
                 }}
+                link="https://github.com/djsmanchanda/Synapse2.0_RadixAI"
               />
             </Flex>
+          </Column>
+        </RevealFx>
+
+        {/* What I'm currently working on section */}
+        <RevealFx translateY="8" delay={0.2}>
+          <Column gap="24" paddingY="xl">
+            <Heading as="h2" variant="display-strong-l" paddingBottom="m">
+              What I'm currently working on
+            </Heading>
+            <div
+              style={{
+                background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(59, 130, 246, 0.08) 100%)',
+                border: '1px solid rgba(139, 92, 246, 0.2)',
+                borderRadius: '16px',
+                padding: '32px',
+                backdropFilter: 'blur(10px)',
+                position: 'relative',
+                overflow: 'hidden',
+              }}
+            >
+              {/* Animated glow effect */}
+              <style dangerouslySetInnerHTML={{
+                __html: `
+                  @keyframes pulseGlow {
+                    0%, 100% {
+                      opacity: 0.3;
+                      transform: scale(1);
+                    }
+                    50% {
+                      opacity: 0.6;
+                      transform: scale(1.05);
+                    }
+                  }
+                  .current-work-glow {
+                    position: absolute;
+                    top: -50%;
+                    right: -50%;
+                    width: 200%;
+                    height: 200%;
+                    background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+                    animation: pulseGlow 4s ease-in-out infinite;
+                    pointer-events: none;
+                  }
+                `
+              }} />
+              <div className="current-work-glow" />
+
+              <Flex gap="16" direction="column" style={{ position: 'relative', zIndex: 1 }}>
+                <Flex gap="12" vertical="center">
+                  <div
+                    style={{
+                      width: '8px',
+                      height: '8px',
+                      borderRadius: '50%',
+                      background: 'rgba(139, 92, 246, 1)',
+                      boxShadow: '0 0 12px rgba(139, 92, 246, 0.8)',
+                      animation: 'pulse 2s ease-in-out infinite',
+                    }}
+                  />
+                  <Text variant="label-default-s" onBackground="brand-medium">
+                    IN PROGRESS
+                  </Text>
+                </Flex>
+
+                <Heading as="h3" variant="heading-strong-l">
+                  Music Taste Visualization with Machine Learning
+                </Heading>
+
+                <Text variant="body-default-l" onBackground="neutral-medium">
+                  I'm working on a machine learning model that visualizes personal and global music tastes in 2D/3D
+                  by creating vector embeddings of songs from their audio, lyrics, and other characteristics. The goal
+                  is to create an interactive map where similar songs cluster together, revealing patterns in musical
+                  preferences and discovering new music through spatial relationships.
+                </Text>
+
+                <Flex gap="8" wrap paddingTop="s">
+                  <div style={{
+                    padding: '6px 12px',
+                    background: 'rgba(139, 92, 246, 0.15)',
+                    border: '1px solid rgba(139, 92, 246, 0.3)',
+                    borderRadius: '8px',
+                  }}>
+                    <Text variant="body-default-s" onBackground="brand-medium">Machine Learning</Text>
+                  </div>
+                  <div style={{
+                    padding: '6px 12px',
+                    background: 'rgba(139, 92, 246, 0.15)',
+                    border: '1px solid rgba(139, 92, 246, 0.3)',
+                    borderRadius: '8px',
+                  }}>
+                    <Text variant="body-default-s" onBackground="brand-medium">Vector Embeddings</Text>
+                  </div>
+                  <div style={{
+                    padding: '6px 12px',
+                    background: 'rgba(139, 92, 246, 0.15)',
+                    border: '1px solid rgba(139, 92, 246, 0.3)',
+                    borderRadius: '8px',
+                  }}>
+                    <Text variant="body-default-s" onBackground="brand-medium">Data Visualization</Text>
+                  </div>
+                  <div style={{
+                    padding: '6px 12px',
+                    background: 'rgba(139, 92, 246, 0.15)',
+                    border: '1px solid rgba(139, 92, 246, 0.3)',
+                    borderRadius: '8px',
+                  }}>
+                    <Text variant="body-default-s" onBackground="brand-medium">Audio Analysis</Text>
+                  </div>
+                </Flex>
+              </Flex>
+            </div>
           </Column>
         </RevealFx>
 

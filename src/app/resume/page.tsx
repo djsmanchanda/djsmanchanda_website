@@ -7,7 +7,13 @@ const ResumePage = () => {
   const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 
   return (
-    <div style={{ height: "100%", width: "100%", position: "relative" }}>
+    <div style={{
+      height: "calc(100vh - 200px)",
+      width: "100%",
+      maxWidth: "1200px",
+      margin: "0 auto",
+      position: "relative"
+    }}>
       { !isMobile ? (
         <iframe
           src="/Divjot_Manchanda_Resume_Nov25.pdf"

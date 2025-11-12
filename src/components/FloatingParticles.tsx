@@ -23,7 +23,7 @@ export default function FloatingParticles() {
 
     let animationFrameId: number;
     const particles: Particle[] = [];
-    const particleCount = 15; // Reduced from 30
+    const particleCount = 200
 
     const resize = () => {
       canvas.width = window.innerWidth;
@@ -39,7 +39,7 @@ export default function FloatingParticles() {
           size: Math.random() * 2 + 0.5,
           speedX: (Math.random() - 0.5) * 0.3,
           speedY: (Math.random() - 0.5) * 0.3,
-          opacity: Math.random() * 0.3 + 0.1,
+          opacity: Math.random() * 0.4 + 0.1,
         });
       }
     };
@@ -64,22 +64,25 @@ export default function FloatingParticles() {
         ctx.fillStyle = `rgba(138, 180, 248, ${particle.opacity})`;
         ctx.fill();
 
-        // Draw connections
-        particles.forEach((otherParticle) => {
-          const dx = particle.x - otherParticle.x;
-          const dy = particle.y - otherParticle.y;
+      });
+
+      // Draw connections between nearby particles
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < 150) {
             ctx.beginPath();
-            ctx.moveTo(particle.x, particle.y);
-            ctx.lineTo(otherParticle.x, otherParticle.y);
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
             ctx.strokeStyle = `rgba(102, 126, 234, ${0.1 * (1 - distance / 150)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
-        });
-      });
+        }
+      }
 
       animationFrameId = requestAnimationFrame(animate);
     };

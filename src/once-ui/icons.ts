@@ -31,6 +31,7 @@ import {
   PiGridFourDuotone,
   PiBookBookmarkDuotone,
   PiImageDuotone,
+  PiBriefcaseDuotone,
 } from "react-icons/pi";
 import { IoDocumentText } from "react-icons/io5";
 
@@ -61,6 +62,7 @@ export const iconLibrary: Record<string, IconType> = {
   calendar: HiCalendarDays,
   home: PiHouseDuotone,
   gallery: PiImageDuotone,
+  briefcase: PiBriefcaseDuotone,
   discord: FaDiscord,
   eye: HiOutlineEye,
   eyeOff: HiOutlineEyeSlash,
