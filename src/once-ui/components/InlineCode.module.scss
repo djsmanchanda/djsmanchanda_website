@@ -3,3 +3,11 @@
     line-height: 125%;
     vertical-align: middle;
 }
+
+/* Mobile: smaller font so long text like "SRM Institute..." fits in one row */
+@media (--s) {
+    .inlineCode {
+        font-size: 65%;
+        white-space: nowrap;
+    }
+}

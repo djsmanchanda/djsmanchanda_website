@@ -16,11 +16,11 @@ type TimeDisplayProps = {
   showSeconds?: boolean; // Option to hide seconds for cleaner look
 };
 
-const TimeDisplay: React.FC<TimeDisplayProps> = ({ 
-  timeZone, 
-  locale = "en-GB", 
+const TimeDisplay: React.FC<TimeDisplayProps> = ({
+  timeZone,
+  locale = "en-GB",
   locationLabel,
-  showSeconds = true 
+  showSeconds = true
 }) => {
   const [currentTime, setCurrentTime] = useState("");
 
@@ -78,10 +78,10 @@ export const Header = () => {
           {display.location && (
             <Flex hide="s" direction="column" gap="4">
               <span>San Francisco</span>
-                            {display.time && (
+              {display.time && (
                 <>
-                  <TimeDisplay 
-                    timeZone={person.location} 
+                  <TimeDisplay
+                    timeZone={person.location}
                     showSeconds={true}
                   />
                 </>
@@ -175,7 +175,7 @@ export const Header = () => {
                   />
                 </>
               )}
-              
+
               {routes["/gallery"] && (
                 <>
                   <ToggleButton
@@ -211,8 +211,8 @@ export const Header = () => {
                 </>
               )}
               <Line vert maxHeight="24" />
-              {/* Social buttons group */}
-              <Flex gap="16" vertical="center" paddingLeft="8">
+              {/* Social buttons group - hidden on mobile */}
+              <Flex gap="16" vertical="center" paddingLeft="8" hide="s">
                 {social.map(
                   (item) =>
                     item.link && (
@@ -242,7 +242,7 @@ export const Header = () => {
               {display.time && (
                 <>
                   <span>Mumbai</span>
-                  <TimeDisplay 
+                  <TimeDisplay
                     timeZone={person.location2}
                     showSeconds={true}
                   />

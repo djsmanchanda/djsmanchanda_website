@@ -47,7 +47,7 @@ export async function generateMetadata() {
 
 // Section wrapper with consistent spacing and card styling
 const Section = ({ children }) => (
-  <Column className={styles.section} gap="m">
+  <Column className={styles.section} gap="m" marginTop="xl">
     {children}
   </Column>
 );
@@ -82,9 +82,9 @@ export default function About() {
   ];
 
   return (
-    <Column 
-      maxWidth="l" 
-      style={{ 
+    <Column
+      maxWidth="l"
+      style={{
         width: about.tableOfContent.display ? "calc(100% - 220px)" : "100%",
         marginLeft: about.tableOfContent.display ? "20% - 220px" : "0",
         transition: "width 0.3s ease, margin-left 0.3s ease"
@@ -143,14 +143,6 @@ export default function About() {
               size="xl"
               style={{ width: "240px", height: "240px" }}
             />
-            <Flex gap="8" vertical="center">
-              <Icon onBackground="accent-weak" name="globe" />
-              {person.location}
-            </Flex>
-            <Flex gap="8" vertical="center">
-              <Icon onBackground="accent-weak" name="globe" />
-              {person.location2}
-            </Flex>
             {person.languages.length > 0 && (
               <Flex wrap gap="8">
                 {person.languages.map((language, index) => (
@@ -163,7 +155,7 @@ export default function About() {
           </Column>
         )}
 
-        <Column className={styles.blockAlign} flex={9} maxWidth={48}>
+        <Column className={`${styles.blockAlign} ${styles.mobileFullWidth}`} flex={9} maxWidth={64}>
           <Column
             id={about.intro.title}
             fillWidth
@@ -194,13 +186,18 @@ export default function About() {
                 />
               </Flex>
             )}
-            <Heading className={styles.textAlign} variant="display-strong-xl">
-              {person.name}
+            <Heading
+              className={styles.textAlign}
+              variant="display-strong-xl"
+              style={{ textAlign: 'center', width: '100%' }}
+            >
+              {person.firstName}<br />{person.lastName}
             </Heading>
             <Text
               className={styles.textAlign}
               variant="display-default-xs"
               onBackground="neutral-weak"
+              style={{ textAlign: 'center', width: '100%' }}
             >
               {person.role}
             </Text>
@@ -275,6 +272,8 @@ export default function About() {
                       horizontal="space-between"
                       vertical="end"
                       marginBottom="4"
+                      mobileDirection="column"
+                      gap="4"
                     >
                       <Text id={experience.company} variant="heading-strong-l">
                         {experience.company}
@@ -282,7 +281,6 @@ export default function About() {
                       <Text
                         variant="heading-default-xs"
                         onBackground="neutral-weak"
-                        style={{ whiteSpace: "nowrap" }}
                       >
                         {experience.timeframe}
                       </Text>
@@ -434,6 +432,8 @@ export default function About() {
                       horizontal="space-between"
                       vertical="end"
                       marginBottom="4"
+                      mobileDirection="column"
+                      gap="4"
                     >
                       <Text id={experience.company} variant="heading-strong-l">
                         {experience.company}

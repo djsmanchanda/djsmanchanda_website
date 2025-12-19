@@ -1,8 +1,8 @@
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
-  firstName: "Divjot",
-  lastName: "Singh Manchanda",
+  firstName: "Divjot Singh",
+  lastName: "Manchanda",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
@@ -62,13 +62,13 @@ const home = {
   title: `${person.name}`,
   description: `Portfolio website showcasing my work as an ${person.role}`,
   headline: <>
-    <span style={{whiteSpace: 'nowrap'}}>{person.name}</span>
+    <span style={{ whiteSpace: 'nowrap' }}>{person.name}</span>
     <br />
-    <span style={{fontSize: '0.60em', whiteSpace: 'nowrap'}}>AI Engineer and builder of things</span>
+    <span style={{ fontSize: '0.60em', whiteSpace: 'nowrap' }}>AI Engineer and builder of things</span>
   </>,
   subline: (
     <>
-      I'm a 7 time hackathon winner, currently studying Artificial Intelligence at <InlineCode>SRM Institute of Science and Technology</InlineCode>.
+      I'm a 8 time hackathon winner, currently studying Artificial Intelligence at <InlineCode>SRM Institute of Science and Technology</InlineCode>.
       <br /> I explore cutting-edge AI research and build projects that connect ideas to impact. Previously, at <InlineCode>UC Berkeley</InlineCode>, for the SCET Startup Semester.
     </>
   ),
@@ -94,16 +94,18 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        I am an AI engineer, researcher, and student entrepreneur passionate about designing 
-        intelligent systems. I have worked on factory supply-chain optimization at Renault-Nissan, designed 
-        Fintech solutions at IIT Madras, as well as worked on AI-driven health diagnostics tools. I am studying 
-        Artificial Intelligence at SRMIST, Kattankulathur, and am working on a research projects involving exosome-based
-        medical diagnostics at University of California, Berkeley.
+        AI engineer and researcher building intelligent systems that solve real-world problems.
+        <br /><br />
+        <strong>Currently:</strong> Studying AI at SRMIST and researching exosome-based medical diagnostics at UC Berkeley.
+        <br /><br />
+        <strong>Previously:</strong> Built supply-chain optimization tools at Renault-Nissan, developed fintech solutions at IIT Madras, and created AI-driven health diagnostics systems.
+        <br /><br />
+        8x hackathon winner passionate about turning cutting-edge research into impactful products.
       </>
     ),
   },
   work: {
-    display: true,
+    display: false, // Hidden - separate /work page exists
     title: "Work Experience",
     experiences: [
       {
@@ -136,7 +138,7 @@ const about = {
         images: [],
       },
     ],
-  },  
+  },
   hackathon: {
     display: true,
     title: "Hackathons Won",
@@ -179,7 +181,7 @@ const about = {
         images: [],
       },
     ],
-  },  
+  },
   studies: {
     display: true,
     title: "Studies",
@@ -190,7 +192,7 @@ const about = {
       },
       {
         name: "University of California, Berkeley",
-        description: <>Startup Semester - Sutardja Center for Entrepreneurship & Technology</>,
+        description: <>Startup Semester - Sutardja Center for Entrepreneurship & Technology, SGPA 10.0</>,
       },
     ],
   },
@@ -236,8 +238,8 @@ const work = {
 
 const gallery = {
   label: "Gallery",
-  title: "lorem ipsum",
-  description: `ipsum lorem`,
+  title: "Gallery",
+  description: `Gallery of ${person.name}`,
   images: [
     {
       src: "/images/gallery/img-10.jpg",

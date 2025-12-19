@@ -1,0 +1,18 @@
+/* Mobile-only styles for home page */
+
+@media (--s) {
+    .heroHeading {
+        font-size: 2rem !important;
+        word-break: break-word;
+    }
+
+    .heroSubline {
+        font-size: 0.95rem !important;
+    }
+
+    /* Smaller font for SRM text to fit in one row */
+    .inlineCodeMobile {
+        font-size: 0.8rem !important;
+        white-space: nowrap;
+    }
+}

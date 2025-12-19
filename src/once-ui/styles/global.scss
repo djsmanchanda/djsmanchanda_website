@@ -67,3 +67,17 @@ a:not(.button) {
 ::-webkit-scrollbar-corner {
     background-color: var(--static-transparent);
 }
+
+/* Mobile: Remove excessive padding for wider content */
+@media (--s) {
+    [class*="paddingX-"] {
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+    }
+
+    [class*="padding-m"],
+    [class*="padding-l"],
+    [class*="padding-xl"] {
+        padding: 8px !important;
+    }
+}

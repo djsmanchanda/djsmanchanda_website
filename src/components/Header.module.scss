@@ -7,7 +7,7 @@
     pointer-events: none;
     backdrop-filter: blur(0.5rem);
     background: linear-gradient(to bottom, var(--page-background), var(--static-transparent));
-    mask-image: linear-gradient(rgba(0,0,0) 25%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(rgba(0, 0, 0) 25%, rgba(0, 0, 0, 0) 100%);
     mask-size: 100% 100%;
 }
 
@@ -21,5 +21,16 @@
     .mask {
         transform: rotate(180deg);
         bottom: 0;
+    }
+
+    /* Hide social icons on mobile to reduce header overflow */
+    .hideSocialMobile {
+        display: none !important;
+    }
+
+    /* Reduce header padding on mobile */
+    .mobileCompact {
+        padding: var(--static-space-4) !important;
+        gap: var(--static-space-2) !important;
     }
 }

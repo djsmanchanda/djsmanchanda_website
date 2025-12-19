@@ -11,18 +11,22 @@
     height: fit-content;
     top: var(--static-space-64);
 }
+
 .avatarPositioning {
     margin-left: -50px; // Pulls the avatar closer to the TOC
 }
 
 @media (--m) {
     .avatarPositioning {
-      margin-left: 0; // Reset on mobile where TOC is hidden
+        margin-left: 0; // Reset on mobile where TOC is hidden
     }
 }
+
 @media (--s) {
     .avatar {
         top: auto;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 
     .textAlign {
@@ -31,5 +35,37 @@
 
     .blockAlign {
         align-self: center;
+        width: 100% !important;
+    }
+
+    /* Make content truly full width on mobile - ZERO side padding */
+    .mobileFullWidth {
+        max-width: none !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+        padding-bottom: 120px !important;
+        margin: 0 !important;
+    }
+
+    /* Better spacing for section content */
+    .section {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        text-align: left;
+        width: 100% !important;
+    }
+
+    /* Smaller font for long company/institution names */
+    .mobileCompanyName {
+        font-size: 1.1rem !important;
+        line-height: 1.4 !important;
+    }
+
+    /* Improve list item spacing */
+    .mobileListItem {
+        padding-left: var(--static-space-8) !important;
+        margin-bottom: var(--static-space-12) !important;
     }
 }
