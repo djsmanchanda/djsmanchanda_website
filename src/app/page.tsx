@@ -1,3 +1,4 @@
+//src\app\page.tsx
 import React from "react";
 
 import { Heading, Flex, Text, Button, Avatar, RevealFx, Arrow, Column } from "@/once-ui/components";
@@ -60,15 +61,42 @@ export default function Home() {
             }
           }
           
+          .mobile-break {
+            display: none;
+          }
+          
+          .mobile-break-tight {
+            display: none;
+            line-height: 0;
+            margin: 0;
+            padding: 0;
+          }
+          
           /* Mobile responsive fixes */
           @media (max-width: 768px) {
+            .mobile-break {
+              display: block;
+            }
+            
+            .mobile-break-tight {
+              display: block;
+              line-height: 0.5;
+            }
+            
             .gradient-heading {
-              font-size: clamp(1.75rem, 7vw, 3.5rem) !important;
-              line-height: 1.2 !important;
+              font-size: clamp(3rem, 12vw, 4.5rem) !important;
+              line-height: 1.15 !important;
               word-break: break-word;
               hyphens: auto;
               max-width: 100% !important;
-              padding-right: 0.5rem;
+              padding-right: 0.25rem;
+            }
+            
+            .mobile-subline {
+              font-size: clamp(2rem, 7vw, 3rem) !important;
+              line-height: 1.3 !important;
+              max-width: 100% !important;
+              overflow-wrap: break-word;
             }
             
             .stats-container {
@@ -98,7 +126,11 @@ export default function Home() {
           
           @media (max-width: 480px) {
             .gradient-heading {
-              font-size: clamp(1.75rem, 7vw, 3.5rem) !important;
+              font-size: clamp(3.5rem, 12vw, 4.5rem) !important;
+            }
+            
+            .mobile-subline {
+              font-size: clamp(2rem, 7vw, 3rem) !important;
             }
           }
         `

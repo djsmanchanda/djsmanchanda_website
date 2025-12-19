@@ -1,3 +1,4 @@
+//src/app/resources/content.js
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
@@ -62,9 +63,11 @@ const home = {
   title: `${person.name}`,
   description: `Portfolio website showcasing my work as an ${person.role}`,
   headline: <>
-    <span style={{ whiteSpace: 'nowrap' }}>{person.name}</span>
+    {person.firstName}<br className="mobile-break" />{person.lastName}
     <br />
-    <span style={{ fontSize: '0.60em', whiteSpace: 'nowrap' }}>AI Engineer and builder of things</span>
+    <span style={{ fontSize: '0.60em', lineHeight: '1.2', display: 'inline-block', marginTop: '1rem' }}>
+      AI Engineer and<br className="mobile-break" />builder of things
+    </span>
   </>,
   subline: (
     <>
