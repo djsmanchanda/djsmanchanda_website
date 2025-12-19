@@ -1,4 +1,3 @@
-//src/app/page.tsx
 import React from "react";
 
 import { Heading, Flex, Text, Button, Avatar, RevealFx, Arrow, Column } from "@/once-ui/components";
@@ -60,6 +59,27 @@ export default function Home() {
               transform: translateY(0);
             }
           }
+          
+          /* Mobile responsive fixes */
+          @media (max-width: 768px) {
+            .gradient-heading {
+              font-size: clamp(2rem, 8vw, 3.5rem) !important;
+              line-height: 1.2 !important;
+              word-break: break-word;
+              hyphens: auto;
+            }
+            
+            .stats-container {
+              justify-content: center !important;
+            }
+            
+            .featured-projects-grid {
+              display: grid !important;
+              grid-template-columns: 1fr !important;
+              gap: 1rem !important;
+              width: 100% !important;
+            }
+          }
         `
       }} />
 
@@ -89,61 +109,90 @@ export default function Home() {
 
         {/* Enhanced Hero Section */}
         <Column fillWidth paddingY="xl" gap="m">
-          <Column maxWidth="s">
+          <Column fillWidth>
             <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="m">
-              <Heading wrap="balance" variant="display-strong-l" style={{
-                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
-              }}>
+              <Heading
+                wrap="balance"
+                variant="display-strong-l"
+                className="gradient-heading"
+                style={{
+                  background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  maxWidth: '100%',
+                  wordWrap: 'break-word',
+                  overflowWrap: 'break-word'
+                }}>
                 {home.headline}
               </Heading>
             </RevealFx>
             <RevealFx translateY="8" delay={0.2} fillWidth horizontal="start" paddingBottom="m">
-              <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
+              <Text
+                wrap="balance"
+                onBackground="neutral-weak"
+                variant="heading-default-xl"
+                style={{
+                  maxWidth: '100%',
+                  wordWrap: 'break-word',
+                  overflowWrap: 'break-word'
+                }}>
                 {home.subline}
               </Text>
             </RevealFx>
 
             {/* Stats Section */}
             <RevealFx translateY={10} delay={0.3} fillWidth horizontal="start" paddingBottom="m">
-              <Flex gap="16" wrap style={{ marginTop: '1.5rem', marginBottom: '1.5rem' }}>
+              <Flex
+                className="stats-container"
+                gap="16"
+                wrap
+                style={{
+                  marginTop: '1.5rem',
+                  marginBottom: '1.5rem',
+                  width: '100%'
+                }}>
                 <div style={{
                   padding: '1rem 1.5rem',
                   background: 'rgba(102, 126, 234, 0.1)',
                   borderRadius: '12px',
                   border: '1px solid rgba(102, 126, 234, 0.2)',
-                  backdropFilter: 'blur(10px)'
+                  backdropFilter: 'blur(10px)',
+                  flex: '1 1 auto',
+                  minWidth: 'fit-content'
                 }}>
-                  <Text variant="heading-strong-l" style={{ color: '#667eea' }}>7+</Text>
-                  <Text variant="body-default-s" onBackground="neutral-weak">Hackathons Won</Text>
+                  <Text variant="heading-strong-l" style={{ color: '#667eea' }}>8</Text>
+                  <Text variant="body-default-s" onBackground="neutral-weak"> Hackathons Won</Text>
                 </div>
                 <div style={{
                   padding: '1rem 1.5rem',
                   background: 'rgba(118, 75, 162, 0.1)',
                   borderRadius: '12px',
                   border: '1px solid rgba(118, 75, 162, 0.2)',
-                  backdropFilter: 'blur(10px)'
+                  backdropFilter: 'blur(10px)',
+                  flex: '1 1 auto',
+                  minWidth: 'fit-content'
                 }}>
                   <Text variant="heading-strong-l" style={{ color: '#764ba2' }}>8.8</Text>
-                  <Text variant="body-default-s" onBackground="neutral-weak">CGPA</Text>
+                  <Text variant="body-default-s" onBackground="neutral-weak"> CGPA</Text>
                 </div>
                 <div style={{
                   padding: '1rem 1.5rem',
                   background: 'rgba(138, 180, 248, 0.1)',
                   borderRadius: '12px',
                   border: '1px solid rgba(138, 180, 248, 0.2)',
-                  backdropFilter: 'blur(10px)'
+                  backdropFilter: 'blur(10px)',
+                  flex: '1 1 auto',
+                  minWidth: 'fit-content'
                 }}>
                   <Text variant="heading-strong-l" style={{ color: '#8ab4f8' }}>AI</Text>
-                  <Text variant="body-default-s" onBackground="neutral-weak">Engineer</Text>
+                  <Text variant="body-default-s" onBackground="neutral-weak"> Engineer</Text>
                 </div>
               </Flex>
             </RevealFx>
 
             <RevealFx translateY="12" delay={0.4} horizontal="start">
-              <Flex gap="12">
+              <Flex gap="12" wrap>
                 <Button
                   id="about"
                   data-border="rounded"
@@ -211,7 +260,12 @@ export default function Home() {
               </Button>
             </Flex>
 
-            <Flex fillWidth gap="m" wrap mobileDirection="column">
+            <div className="featured-projects-grid" style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '1rem',
+              width: '100%'
+            }}>
               <FeaturedProjectCard
                 title="Youtrition"
                 description="AI-powered personalized nutrition platform with real-time health data integration. Features 3-layered recommendation engine and predictive analytics dashboard."
@@ -240,7 +294,7 @@ export default function Home() {
                   start: 'rgba(168, 85, 247, 0.05)',
                   end: 'rgba(236, 72, 153, 0.05)'
                 }}
-                link="https://github.com/djsmanchanda/VogueFusion_Pulse"
+                link="https://github.com/Samyak008/VogueFusion_Pulse"
               />
               <FeaturedProjectCard
                 title="RadixAI"
@@ -252,14 +306,14 @@ export default function Home() {
                 }}
                 link="https://github.com/djsmanchanda/Synapse2.0_RadixAI"
               />
-            </Flex>
+            </div>
           </Column>
         </RevealFx>
 
         {/* What I'm currently working on section */}
         <RevealFx translateY="8" delay={0.2}>
           <Column gap="24" paddingY="xl">
-            <Heading as="h2" variant="display-strong-l" paddingBottom="m">
+            <Heading as="h2" variant="display-strong-xs">
               What I'm currently working on
             </Heading>
             <div
@@ -379,7 +433,6 @@ export default function Home() {
             </Flex>
           </Flex>
         )}
-        {/* <Projects range={[2]} /> */}
       </Column>
     </>
   );
