@@ -63,10 +63,12 @@ export default function Home() {
           /* Mobile responsive fixes */
           @media (max-width: 768px) {
             .gradient-heading {
-              font-size: clamp(2rem, 8vw, 3.5rem) !important;
+              font-size: clamp(1.75rem, 7vw, 3.5rem) !important;
               line-height: 1.2 !important;
               word-break: break-word;
               hyphens: auto;
+              max-width: 100% !important;
+              padding-right: 0.5rem;
             }
             
             .stats-container {
@@ -78,6 +80,25 @@ export default function Home() {
               grid-template-columns: 1fr !important;
               gap: 1rem !important;
               width: 100% !important;
+            }
+            
+            .section-heading {
+              text-align: center !important;
+              width: 100% !important;
+            }
+            
+            .mobile-center-section {
+              align-items: center !important;
+            }
+            
+            .blog-heading-wrapper {
+              padding-left: 0 !important;
+            }
+          }
+          
+          @media (max-width: 480px) {
+            .gradient-heading {
+              font-size: clamp(1.75rem, 7vw, 3.5rem) !important;
             }
           }
         `
@@ -120,9 +141,11 @@ export default function Home() {
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
+                  width: '100%',
                   maxWidth: '100%',
                   wordWrap: 'break-word',
-                  overflowWrap: 'break-word'
+                  overflowWrap: 'break-word',
+                  paddingRight: '0.5rem'
                 }}>
                 {home.headline}
               </Heading>
@@ -232,7 +255,7 @@ export default function Home() {
         {/* Tech Stack Section */}
         <RevealFx translateY="16" delay={0.5}>
           <Column fillWidth gap="l" paddingY="m">
-            <Heading as="h2" variant="display-strong-xs" align="center">
+            <Heading as="h2" variant="display-strong-xs" align="center" className="section-heading">
               Tech Stack
             </Heading>
             <Flex fillWidth horizontal="center" wrap gap="8" style={{ justifyContent: 'center' }}>
@@ -246,8 +269,8 @@ export default function Home() {
         {/* Featured Projects Section */}
         <RevealFx translateY={20} delay={0.6}>
           <Column fillWidth gap="l" paddingY="l">
-            <Flex fillWidth horizontal="space-between" vertical="center" mobileDirection="column" gap="m">
-              <Heading as="h2" variant="display-strong-xs">
+            <Flex fillWidth horizontal="space-between" vertical="center" mobileDirection="column" gap="m" className="mobile-center-section">
+              <Heading as="h2" variant="display-strong-xs" className="section-heading">
                 Featured Projects
               </Heading>
               <Button
@@ -313,7 +336,7 @@ export default function Home() {
         {/* What I'm currently working on section */}
         <RevealFx translateY="8" delay={0.2}>
           <Column gap="24" paddingY="xl">
-            <Heading as="h2" variant="display-strong-xs">
+            <Heading as="h2" variant="display-strong-xs" className="section-heading">
               What I'm currently working on
             </Heading>
             <div
@@ -423,8 +446,8 @@ export default function Home() {
 
         {routes["/blog"] && (
           <Flex fillWidth gap="24" mobileDirection="column">
-            <Flex flex={1} paddingLeft="l">
-              <Heading as="h2" variant="display-strong-xs" wrap="balance">
+            <Flex flex={1} paddingLeft="l" className="blog-heading-wrapper">
+              <Heading as="h2" variant="display-strong-xs" wrap="balance" className="section-heading">
                 Latest from the blog
               </Heading>
             </Flex>
