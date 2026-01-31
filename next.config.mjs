@@ -11,12 +11,8 @@ const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
 
   experimental: {
-    instrumentationHook: true,   // ✅ enable instrumentation.ts
     optimizePackageImports: ['@once-ui/components', 'react-icons'],
   },
-
-  // Performance optimizations
-  swcMinify: true,
 
   // Optimize images
   images: {
