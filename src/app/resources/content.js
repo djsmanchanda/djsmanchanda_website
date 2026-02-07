@@ -63,10 +63,10 @@ const home = {
   title: `${person.name}`,
   description: `Portfolio website showcasing my work as an ${person.role}`,
   headline: <>
-    {person.firstName}<br className="mobile-break" />{person.lastName}
+    {person.firstName} <br className="mobile-break" />{person.lastName}
     <br />
     <span style={{ fontSize: '0.60em', lineHeight: '1.2', display: 'inline-block', marginTop: '1rem' }}>
-      AI Engineer and<br className="mobile-break" />builder of things
+      AI Engineer and <br className="mobile-break" />builder of things
     </span>
   </>,
   subline: (
