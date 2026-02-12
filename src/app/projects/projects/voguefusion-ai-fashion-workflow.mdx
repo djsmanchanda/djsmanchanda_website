@@ -1,0 +1,58 @@
+---
+title: "VogueFusion – AI Fashion Workflow Suite"
+publishedAt: "2025-03-12"
+summary: "Hackathon-winning system that fuses generative design, cost prediction, and trend intelligence to compress the fashion design-to-production cycle."
+images:
+  - "/images/projects/project-01/cover-01.jpg"
+  - "/images/projects/project-01/image-01.jpg"
+team:
+  - name: "Divjot Singh Manchanda"
+    role: "AI Engineer & Full-Stack Developer"
+    avatar: "/images/avatar.jpg"
+link: "https://github.com/djsmanchanda/VogueFusion_Pulse"
+---
+
+## Overview
+
+VogueFusion is an AI workflow that compresses the fashion design-to-production cycle. It generates apparel concepts from structured inputs, estimates manufacturing cost from the resulting designs, and analyzes seasonal trends so teams can decide what to build with confidence.
+
+## What It Does
+
+- **AI design generation**: Converts fabric type, style constraints, and trend keywords into high-resolution fashion concepts.
+- **Cost prediction**: Estimates dye costs from dominant color analysis and optimizes mixtures for price efficiency.
+- **Trend intelligence**: Mines seasonal imagery to surface current, emerging, and fading styles.
+
+## How It Works
+
+### 1) Generative Design Pipeline
+- Uses **ComfyUI** with SDXL-based models like **DreamShaperXL** and fine-tuned LoRAs for fashion-specific outputs.
+- Inputs (fabric, silhouette, keywords, trend signals) are converted into prompt templates and rendered into high-resolution variants.
+- Outputs move to the cost pipeline for pricing and feasibility checks.
+
+### 2) Cost Prediction Engine
+- Each design is analyzed for dominant colors and frequency.
+- A **genetic algorithm** searches dye combinations that match the RGB palette while minimizing cost.
+- Prices are aggregated from a dye-cost dataset to output a final estimate.
+
+### 3) Trend Analysis Pipeline
+- A custom dataset (200 images per season across five years) is scraped using the **Pinscrape API**.
+- Keywords are extracted and clustered to identify macro patterns by season and category.
+- The trend layer annotates designs with current / emerging / fading signals for decision support.
+
+## Technical Highlights
+
+- **Model stack**: SDXL + LoRA fine-tuning for style consistency and control.
+- **Data engineering**: Multi-season dataset with keyword clustering for trend analytics.
+- **Optimization**: Genetic algorithm for price-aware color formulation.
+- **Pipeline design**: One workflow that unifies creative, cost, and market insight.
+
+## Impact
+
+VogueFusion demonstrates an end-to-end AI workflow that connects design generation, pricing, and trend intelligence. It highlights model orchestration, data engineering, and optimization skills aligned to production constraints.
+
+## Technologies Used
+
+- **Generative AI**: Stable Diffusion XL, DreamShaperXL, ComfyUI, LoRA
+- **ML/Optimization**: Genetic algorithms, clustering
+- **Data**: Pinscrape API, custom trend datasets
+- **Stack**: Python, OpenCV, NumPy, PyTorch

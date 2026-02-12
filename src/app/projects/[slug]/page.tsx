@@ -14,14 +14,14 @@ interface WorkParams {
 }
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
-  const posts = getPosts(["src", "app", "work", "projects"]);
+  const posts = getPosts(["src", "app", "projects", "projects"]);
   return posts.map((post) => ({
     slug: post.slug,
   }));
 }
 
 export function generateMetadata({ params: { slug } }: WorkParams) {
-  let post = getPosts(["src", "app", "work", "projects"]).find((post) => post.slug === slug);
+  let post = getPosts(["src", "app", "projects", "projects"]).find((post) => post.slug === slug);
 
   if (!post) {
     return;
@@ -47,7 +47,7 @@ export function generateMetadata({ params: { slug } }: WorkParams) {
       description,
       type: "article",
       publishedTime,
-      url: `https://${baseURL}/work/${post.slug}`,
+      url: `https://${baseURL}/projects/${post.slug}`,
       images: [
         {
           url: ogImage,
@@ -64,7 +64,7 @@ export function generateMetadata({ params: { slug } }: WorkParams) {
 }
 
 export default function Project({ params }: WorkParams) {
-  let post = getPosts(["src", "app", "work", "projects"]).find((post) => post.slug === params.slug);
+  let post = getPosts(["src", "app", "projects", "projects"]).find((post) => post.slug === params.slug);
 
   if (!post) {
     notFound();
@@ -91,7 +91,7 @@ export default function Project({ params }: WorkParams) {
             image: post.metadata.image
               ? `https://${baseURL}${post.metadata.image}`
               : `https://${baseURL}/og?title=${post.metadata.title}`,
-            url: `https://${baseURL}/work/${post.slug}`,
+            url: `https://${baseURL}/projects/${post.slug}`,
             author: {
               "@type": "Person",
               name: person.name,
@@ -100,7 +100,7 @@ export default function Project({ params }: WorkParams) {
         }}
       />
       <Column maxWidth="xs" gap="16">
-        <Button href="/work" variant="tertiary" weight="default" size="s" prefixIcon="chevronLeft">
+        <Button href="/projects" variant="tertiary" weight="default" size="s" prefixIcon="chevronLeft">
           Projects
         </Button>
         <Heading variant="display-strong-s">{post.metadata.title}</Heading>

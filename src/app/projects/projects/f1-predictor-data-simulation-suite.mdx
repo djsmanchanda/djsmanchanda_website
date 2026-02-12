@@ -1,0 +1,44 @@
+---
+title: "F1 Predictor – Data & Simulation Suite"
+publishedAt: "2025-02-20"
+summary: "A production-grade F1 data platform that powers a Monte Carlo championship simulator with resilient caching and real-time race intelligence."
+images:
+  - "/images/projects/project-01/cover-02.jpg"
+  - "/images/projects/project-01/image-02.jpg"
+team:
+  - name: "Divjot Singh Manchanda"
+    role: "Full-Stack Developer & Data Engineer"
+    avatar: "/images/avatar.jpg"
+link: "https://github.com/djsmanchanda/F1-predictor"
+---
+
+## Overview
+
+F1 Predictor is a data and simulation suite that pairs a Cloudflare Worker cache with a React-based championship simulator. The system solves a core problem for motorsport analytics: race data is dynamic, APIs are rate-limited, and simulations need consistent inputs. I built an AutoCache Worker that normalizes and caches data, then layered a Monte Carlo engine on top to generate season outcomes under custom scenarios.
+
+## Architecture
+
+- **AutoCache Worker**: Cloudflare Worker that fetches standings and race results from the Jolpi/Ergast API, normalizes data, and publishes JSON/CSV endpoints.
+- **KV-backed cache**: Hourly cron updates with a 6-hour post-race refresh window to reduce API load while staying current.
+- **Simulator UI**: React + Vite app that consumes the Worker API and renders probabilities, deltas, and progression charts.
+- **Fallback strategy**: The simulator falls back to the upstream API if the Worker is unavailable.
+
+## How The Simulation Works
+
+1. **Baseline**: Loads current standings from the AutoCache Worker.
+2. **Scenario rules**: Applies custom constraints like driver locks, finishing orders, or bias curves.
+3. **Monte Carlo engine**: Runs 1000+ iterations per mode to compute win probabilities.
+4. **Aggregation**: Produces championship projections and per-driver outcome distributions.
+
+## Why It Matters
+
+- **Reliable data layer** for fast UIs without API throttling.
+- **Experiment-friendly** interface for what-if race scenarios.
+- **Production-ready** worker design with cron scheduling and KV persistence.
+
+## Technologies Used
+
+- **Backend**: Cloudflare Workers, KV Storage, Wrangler
+- **Frontend**: React, Vite, Tailwind CSS
+- **Language/Tooling**: TypeScript, ESLint, Cloudflare Vite plugin
+- **Data Sources**: Jolpi/Ergast F1 API

@@ -376,7 +376,7 @@ export default function Home() {
                   start: 'rgba(168, 85, 247, 0.05)',
                   end: 'rgba(236, 72, 153, 0.05)'
                 }}
-                link="https://github.com/Samyak008/VogueFusion_Pulse"
+                  link="https://github.com/djsmanchanda/VogueFusion_Pulse"
               />
               <FeaturedProjectCard
                 title="RadixAI"
