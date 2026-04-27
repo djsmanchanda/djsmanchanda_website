@@ -1,0 +1,52 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e5]:
+    - generic [ref=e8]: San Francisco
+    - generic [ref=e11]:
+      - link [ref=e12] [cursor=pointer]:
+        - /url: /
+        - img [ref=e14]
+      - link "About" [ref=e18] [cursor=pointer]:
+        - /url: /about
+        - img [ref=e20]
+        - generic [ref=e23]: About
+      - link "Projects" [ref=e24] [cursor=pointer]:
+        - /url: /projects
+        - img [ref=e26]
+        - generic [ref=e29]: Projects
+      - link "Work" [ref=e30] [cursor=pointer]:
+        - /url: /work
+        - img [ref=e32]
+        - generic [ref=e35]: Work
+      - link "Gallery" [ref=e36] [cursor=pointer]:
+        - /url: /gallery
+        - img [ref=e38]
+        - generic [ref=e41]: Gallery
+      - link "Resume" [ref=e42] [cursor=pointer]:
+        - /url: /resume
+        - img [ref=e44]
+        - generic [ref=e47]: Resume
+      - generic [ref=e49]:
+        - link "GitHub" [ref=e50] [cursor=pointer]:
+          - /url: https://github.com/djsmanchanda
+          - img [ref=e53]
+        - link "LinkedIn" [ref=e55] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/divjot-singh-manchanda-910643251/
+          - img [ref=e58]
+        - link "X" [ref=e60] [cursor=pointer]:
+          - /url: https://x.com/djsmanchanda
+          - img [ref=e63]
+        - link "Instagram" [ref=e65] [cursor=pointer]:
+          - /url: https://instagram.com/djsmanchanda
+          - img [ref=e68]
+        - link "Email" [ref=e70] [cursor=pointer]:
+          - /url: mailto:djsmanchanda@gmail.com
+          - img [ref=e73]
+        - link "Buy me a coffee" [ref=e76] [cursor=pointer]:
+          - /url: https://coff.ee/djsmanchanda
+          - img [ref=e79]
+    - generic [ref=e84]: Mumbai
+  - status "Loading" [ref=e89]
+  - contentinfo [ref=e91]:
+    - generic [ref=e93]:
+      - generic [ref=e94]: © 2026 /
+      - text: Divjot Singh Manchanda
