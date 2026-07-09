@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 //src/app/about/page.tsx
 import {
   Avatar,
@@ -295,7 +296,7 @@ export default function About() {
                     </Text>
                     <Column as="ul" gap="16">
                       {experience.achievements.map(
-                        (achievement: JSX.Element, index: number) => (
+                        (achievement: ReactNode, index: number) => (
                           <Text
                             as="li"
                             variant="body-default-m"
@@ -452,7 +453,7 @@ export default function About() {
                     </Text>
                     <Column as="ul" gap="16">
                       {experience.achievements.map(
-                        (achievement: JSX.Element, index: number) => (
+                        (achievement: ReactNode, index: number) => (
                           <Text
                             as="li"
                             variant="body-default-m"

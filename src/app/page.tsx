@@ -392,11 +392,11 @@ export default function Home() {
           </Column>
         </RevealFx>
 
-        {/* What I'm currently working on section */}
+        {/* What I&apos;m currently working on section */}
         <RevealFx translateY="8" delay={0.2}>
           <Column gap="24" paddingY="xl">
             <Heading as="h2" variant="display-strong-xs" className="section-heading">
-              What I'm currently working on
+              What I&apos;m currently working on
             </Heading>
             <div
               style={{
@@ -458,7 +458,7 @@ export default function Home() {
                 </Heading>
 
                 <Text variant="body-default-l" onBackground="neutral-medium">
-                  I'm working on a machine learning model that visualizes personal and global music tastes in 2D/3D
+                  I&apos;m working on a machine learning model that visualizes personal and global music tastes in 2D/3D
                   by creating vector embeddings of songs from their audio, lyrics, and other characteristics. The goal
                   is to create an interactive map where similar songs cluster together, revealing patterns in musical
                   preferences and discovering new music through spatial relationships.

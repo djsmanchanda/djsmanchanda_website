@@ -10,6 +10,10 @@ const withMDX = mdx({
 const nextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
 
+  turbopack: {
+    root: process.cwd(),
+  },
+
   experimental: {
     optimizePackageImports: ['@once-ui/components', 'react-icons'],
   },

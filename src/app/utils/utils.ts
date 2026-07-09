@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { notFound } from "next/navigation";
 
 type Team = {
   name: string;
@@ -20,7 +21,6 @@ type Metadata = {
   link?: string;
 };
 
-import { notFound } from 'next/navigation';
 
 function getMDXFiles(dir: string) {
   if (!fs.existsSync(dir)) {
@@ -67,6 +67,6 @@ function getMDXData(dir: string) {
 }
 
 export function getPosts(customPath = ["", "", "", ""]) {
-  const postsDir = path.join(process.cwd(), ...customPath);
+  const postsDir = path.join(process.cwd(), "src", "app", ...customPath);
   return getMDXData(postsDir);
 }

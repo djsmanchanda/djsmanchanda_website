@@ -16,7 +16,7 @@ const person = {
 
 const newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
+  title: <>Subscribe to {person.firstName}&apos;s Newsletter</>,
   description: (
     <>
       I write occasionally about artificial intelligence, research insights, startup experiments,
@@ -71,7 +71,7 @@ const home = {
   </>,
   subline: (
     <>
-      I'm a 8 time hackathon winner, currently studying Artificial Intelligence at <InlineCode>SRM Institute of Science and Technology</InlineCode>.
+      I&apos;m a 8 time hackathon winner, currently studying Artificial Intelligence at <InlineCode>SRM Institute of Science and Technology</InlineCode>.
       <br /> I explore cutting-edge AI research and build projects that connect ideas to impact. Previously, at <InlineCode>UC Berkeley</InlineCode>, for the SCET Startup Semester.
     </>
   ),

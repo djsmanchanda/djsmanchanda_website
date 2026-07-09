@@ -14,14 +14,14 @@ interface BlogParams {
 }
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
-  const posts = getPosts(["src", "app", "blog", "posts"]);
+  const posts = getPosts(["blog", "posts"]);
   return posts.map((post) => ({
     slug: post.slug,
   }));
 }
 
 export function generateMetadata({ params: { slug } }: BlogParams) {
-  let post = getPosts(["src", "app", "blog", "posts"]).find((post) => post.slug === slug);
+  let post = getPosts(["blog", "posts"]).find((post) => post.slug === slug);
 
   if (!post) {
     return;
@@ -62,7 +62,7 @@ export function generateMetadata({ params: { slug } }: BlogParams) {
 }
 
 export default function Blog({ params }: BlogParams) {
-  let post = getPosts(["src", "app", "blog", "posts"]).find((post) => post.slug === params.slug);
+  let post = getPosts(["blog", "posts"]).find((post) => post.slug === params.slug);
 
   if (!post) {
     notFound();
