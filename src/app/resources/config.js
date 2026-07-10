@@ -23,20 +23,14 @@ const style = {
   accent: "cyan", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
   solid: "inverse", // color | contrast
   solidStyle: "plastic", // flat | plastic
-  border: "playful", // rounded | playful | conservative
-  surface: "translucent", // filled | translucent
-  transition: "all", // all | micro | macro
+  border: "conservative", // rounded | playful | conservative
+  surface: "filled", // filled | translucent
+  transition: "micro", // all | micro | macro
 };
 
 const effects = {
-  mask: {
-    cursor: true,
-    x: 0,
-    y: 0,
-    radius: 60,
-  },
   gradient: {
-    display: true,
+    display: false,
     x: 50,
     y: 0,
     width: 100,
@@ -47,7 +41,7 @@ const effects = {
     opacity: 50,
   },
   dots: {
-    display: true,
+    display: false,
     size: 2,
     color: "brand-on-background-weak",
     opacity: 20,
@@ -65,8 +59,8 @@ const effects = {
 };
 
 const display = {
-  location: true,
-  time: true,
+  location: false,
+  time: false,
 };
 
 const mailchimp = {
@@ -79,7 +73,7 @@ const mailchimp = {
       radius: 100,
     },
     gradient: {
-      display: true,
+    display: false,
       x: 100,
       y: 50,
       width: 100,

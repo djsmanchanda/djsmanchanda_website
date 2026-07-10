@@ -7,7 +7,7 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "AI Engineer & Researcher",
+  role: "AI Engineer & Product Builder",
   avatar: "/images/avatar.jpg",
   location: "America/Los_Angeles", // UC Berkeley timezone
   location2: "Asia/Kolkata", // India timezone
@@ -61,18 +61,13 @@ const social = [
 const home = {
   label: "Home",
   title: `${person.name}`,
-  description: `Portfolio website showcasing my work as an ${person.role}`,
+  description: `Portfolio of ${person.name}, an AI engineer and product builder creating practical software across AI, local tools, and the web.`,
   headline: <>
-    {person.firstName} <br className="mobile-break" />{person.lastName}
-    <br />
-    <span style={{ fontSize: '0.60em', lineHeight: '1.2', display: 'inline-block', marginTop: '1rem' }}>
-      AI Engineer and <br className="mobile-break" />builder of things
-    </span>
+    I build useful software where AI meets messy reality.
   </>,
   subline: (
     <>
-      I&apos;m a 8 time hackathon winner, currently studying Artificial Intelligence at <InlineCode>SRM Institute of Science and Technology</InlineCode>.
-      <br /> I explore cutting-edge AI research and build projects that connect ideas to impact. Previously, at <InlineCode>UC Berkeley</InlineCode>, for the SCET Startup Semester.
+      I&apos;m Divjot Singh Manchanda — an AI engineer who takes ideas from rough prototype to dependable product. I build local-first tools, data systems, and full-stack AI applications, and I&apos;m looking for a team where I can keep doing ambitious, hands-on work.
     </>
   ),
 };
@@ -230,8 +225,8 @@ const blog = {
 
 const projects = {
   label: "Projects",
-  title: "My projects",
-  description: `AI and robotics projects by ${person.name}`,
+  title: "Things I have built",
+  description: `AI, data, and product experiments by ${person.name}`,
 };
 
 const work = {

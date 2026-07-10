@@ -95,6 +95,10 @@ const Background = forwardRef<HTMLDivElement, BackgroundProps>(
     }, [forwardedRef]);
 
     useEffect(() => {
+      if (!mask.cursor) {
+        return;
+      }
+
       const handleMouseMove = (event: MouseEvent) => {
         if (backgroundRef.current) {
           const rect = backgroundRef.current.getBoundingClientRect();
@@ -110,7 +114,7 @@ const Background = forwardRef<HTMLDivElement, BackgroundProps>(
       return () => {
         document.removeEventListener("mousemove", handleMouseMove);
       };
-    }, []);
+    }, [mask.cursor]);
 
     useEffect(() => {
       let animationFrameId: number;
@@ -178,7 +182,7 @@ const Background = forwardRef<HTMLDivElement, BackgroundProps>(
         ref={backgroundRef}
         fill
         position={position}
-        className={classNames(mask && styles.mask, className)}
+        className={classNames((mask.cursor || (mask.x != null && mask.y != null)) && styles.mask, className)}
         top="0"
         left="0"
         zIndex={0}
