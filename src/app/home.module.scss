@@ -1,5 +1,10 @@
 /* Homepage visual system */
 
+:global(html),
+:global(body) {
+  background-color: #01040d;
+}
+
 .homeShell {
   width: 100%;
   position: relative;
@@ -9,7 +14,7 @@
   position: relative;
   display: grid;
   width: 100%;
-  grid-template-columns: minmax(0, 1.22fr) minmax(15rem, 0.68fr);
+  grid-template-columns: minmax(0, 1.5fr) minmax(13rem, 0.5fr);
   align-items: center;
   gap: clamp(1.5rem, 4vw, 4rem);
   padding: clamp(1rem, 3vw, 2.5rem) 0 clamp(1.5rem, 3vw, 2.75rem);
@@ -29,17 +34,18 @@
 }
 
 .heroCopy {
-  max-width: 64rem;
+  max-width: 68rem;
 }
 
 .greeting {
   margin-bottom: -0.35rem;
   color: var(--neutral-on-background-weak);
-  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
   letter-spacing: -0.01em;
 }
 .heroHeading {
-  max-width: 17ch;
+  max-width: 22ch;
+  font-size: clamp(2.5rem, 4.5vw, 4.25rem);
   letter-spacing: -0.065em;
   line-height: 0.98;
   text-shadow:
@@ -49,7 +55,7 @@
 }
 
 .heroSubline {
-  max-width: 54rem;
+  max-width: 60rem;
   line-height: 1.45;
 }
 
@@ -115,11 +121,13 @@
 
 @media (max-width: 860px) {
   .heroLayout {
-    grid-template-columns: minmax(0, 1fr) minmax(13rem, 0.55fr);
+    grid-template-columns: minmax(0, 1fr) minmax(13rem, 0.5fr);
     gap: clamp(1.25rem, 5vw, 3rem);
   }
 
-
+  .heroHeading {
+    max-width: 22ch;
+  }
 }
 
 @media (max-width: 700px) {
@@ -139,7 +147,6 @@
     font-size: 2.25rem !important;
     word-break: break-word;
   }
-
 
   .heroSubline {
     font-size: 0.98rem !important;
