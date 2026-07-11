@@ -40,12 +40,12 @@
 .greeting {
   margin-bottom: -0.35rem;
   color: var(--neutral-on-background-weak);
-  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  font-size: clamp(1.45rem, 2.4vw, 2rem) !important;
   letter-spacing: -0.01em;
 }
 .heroHeading {
   max-width: 22ch;
-  font-size: clamp(2.5rem, 4.5vw, 4.25rem);
+  font-size: clamp(2.5rem, 4.1vw, 3.9rem) !important;
   letter-spacing: -0.065em;
   line-height: 0.98;
   text-shadow:
