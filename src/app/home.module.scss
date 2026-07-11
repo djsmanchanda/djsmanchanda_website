@@ -11,8 +11,8 @@
   width: 100%;
   grid-template-columns: minmax(0, 1.22fr) minmax(15rem, 0.68fr);
   align-items: center;
-  gap: clamp(2rem, 6vw, 6rem);
-  padding: clamp(1.5rem, 5vw, 4rem) 0 clamp(2rem, 5vw, 4.5rem);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  padding: clamp(1rem, 3vw, 2.5rem) 0 clamp(1.5rem, 3vw, 2.75rem);
 }
 
 .heroLayout::before {
@@ -29,11 +29,17 @@
 }
 
 .heroCopy {
-  max-width: 56rem;
+  max-width: 64rem;
 }
 
+.greeting {
+  margin-bottom: -0.35rem;
+  color: var(--neutral-on-background-weak);
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+  letter-spacing: -0.01em;
+}
 .heroHeading {
-  max-width: 13ch;
+  max-width: 17ch;
   letter-spacing: -0.065em;
   line-height: 0.98;
   text-shadow:
@@ -43,7 +49,7 @@
 }
 
 .heroSubline {
-  max-width: 47rem;
+  max-width: 54rem;
   line-height: 1.45;
 }
 
@@ -88,90 +94,23 @@
   filter: saturate(0.9) contrast(1.03);
 }
 
-.profileMeta {
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.2rem 0.25rem 0.15rem;
-}
-
-.profileName,
-.profileRole {
-  margin: 0;
-}
-
-.profileName {
-  color: var(--neutral-on-background-strong);
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-.profileRole {
-  margin-top: 0.2rem;
-  color: var(--neutral-on-background-weak);
-  font-size: 0.76rem;
-}
-
-.availability {
-  display: inline-flex;
-  flex-shrink: 0;
-  align-items: center;
-  gap: 0.38rem;
-  border: 1px solid rgba(91, 155, 255, 0.28);
-  border-radius: 999px;
-  padding: 0.35rem 0.52rem;
-  color: var(--brand-on-background-weak);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-}
-
-.availability > span {
-  width: 0.38rem;
-  height: 0.38rem;
-  border-radius: 999px;
-  background: #6ea8ff;
-  box-shadow: 0 0 0 0.2rem rgba(110, 168, 255, 0.12);
-}
-
 .capabilityStrip {
   width: 100%;
   border-top: 1px solid rgba(133, 163, 218, 0.28);
   border-bottom: 1px solid rgba(133, 163, 218, 0.28);
-  padding: 1.3rem 0;
+  padding: 0.95rem 0;
   background: linear-gradient(90deg, rgba(14, 32, 68, 0.18), rgba(7, 17, 40, 0.04) 70%, rgba(20, 51, 112, 0.15));
 }
 
 .capabilityStrip > div {
+  justify-content: center;
   row-gap: 0.75rem;
 }
 
-.capabilityNote {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  margin-left: auto;
-  color: var(--brand-on-background-weak);
-  font-size: 0.78rem;
-  font-weight: 650;
-  letter-spacing: 0.01em;
-  white-space: nowrap;
-}
-
-.capabilityDot {
-  width: 0.42rem;
-  height: 0.42rem;
-  border-radius: 50%;
-  background: #70aaff;
-  box-shadow: 0 0 0 0.23rem rgba(112, 170, 255, 0.12);
-}
 
 .workingStyle {
   width: 100%;
-  padding-bottom: 5rem;
+  padding-bottom: 3rem;
 }
 
 @media (max-width: 860px) {
@@ -180,14 +119,7 @@
     gap: clamp(1.25rem, 5vw, 3rem);
   }
 
-  .heroHeading {
-    max-width: 11ch;
-  }
 
-  .capabilityNote {
-    width: 100%;
-    margin-left: 0;
-  }
 }
 
 @media (max-width: 700px) {
@@ -203,10 +135,11 @@
   }
 
   .heroHeading {
-    max-width: 11ch;
+    max-width: 12ch;
     font-size: 2.25rem !important;
     word-break: break-word;
   }
+
 
   .heroSubline {
     font-size: 0.98rem !important;
@@ -232,7 +165,4 @@
     gap: 0.7rem !important;
   }
 
-  .capabilityNote {
-    margin-top: 0.15rem;
-  }
 }

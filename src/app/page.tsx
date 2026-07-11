@@ -58,6 +58,9 @@ export default function Home() {
 
         <section className={styles.heroLayout} aria-labelledby="home-heading">
           <Column fillWidth paddingY="xl" gap="l" className={styles.heroCopy}>
+            <Text variant="label-strong-s" onBackground="neutral-weak" className={styles.greeting}>
+              Hi, I&apos;m Divjot Singh Manchanda —
+            </Text>
             <Text variant="label-strong-s" onBackground="brand-weak">
               AI ENGINEER · PRODUCT BUILDER · OPEN TO NEW OPPORTUNITIES
             </Text>
@@ -74,7 +77,7 @@ export default function Home() {
               <Button href="#selected-work" variant="secondary" size="m" arrowIcon>
                 Explore recent work
               </Button>
-              <Button href="/resume" variant="tertiary" size="m" arrowIcon>
+              <Button href="/resume" variant="secondary" size="m" arrowIcon>
                 Resume
               </Button>
             </Flex>
@@ -90,15 +93,6 @@ export default function Home() {
                 sizes="(max-width: 700px) 82vw, 19rem"
               />
             </div>
-            <div className={styles.profileMeta}>
-              <div>
-                <p className={styles.profileName}>Divjot Singh Manchanda</p>
-                <p className={styles.profileRole}>AI engineer · product builder</p>
-              </div>
-              <span className={styles.availability}>
-                <span aria-hidden="true" /> Open to work
-              </span>
-            </div>
           </aside>
         </section>
 
@@ -111,9 +105,6 @@ export default function Home() {
             <Text variant="body-strong-m">Data products</Text>
             <Text onBackground="neutral-weak" aria-hidden="true">/</Text>
             <Text variant="body-strong-m">Systems that respect users</Text>
-            <span className={styles.capabilityNote}>
-              <span className={styles.capabilityDot} aria-hidden="true" /> Available for the right team
-            </span>
           </Flex>
         </section>
 
