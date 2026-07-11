@@ -127,3 +127,57 @@
     min-height: 0;
   }
 }
+.comingSoonCard {
+  background: #0b1423;
+  border-color: #15243b;
+
+  .cardTopline p,
+  .summary {
+    color: #8ea0bc;
+  }
+
+  h3 {
+    color: #edf4ff;
+  }
+
+  li {
+    border-color: #253956;
+    color: #a8b9d2;
+  }
+}
+
+.comingSoonLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 1.5rem;
+  color: #a8b9d2;
+  font-size: 0.875rem;
+  font-weight: 650;
+}
+
+.comingSoonIndicator {
+  display: inline-block;
+  min-width: 1.1rem;
+  color: #70a5ff;
+  font-variant-numeric: tabular-nums;
+}
+
+.comingSoonIndicator::after {
+  content: "0";
+  animation: comingSoonSteps 1.6s steps(1, end) infinite;
+}
+
+@keyframes comingSoonSteps {
+  0%, 24.99% { content: "0"; }
+  25%, 49.99% { content: "1"; }
+  50%, 74.99% { content: "2"; }
+  75%, 100% { content: "3"; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .comingSoonIndicator::after {
+    animation: none;
+    content: "0 1 2 3";
+  }
+}

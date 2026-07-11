@@ -1,3 +1,10 @@
+.section {
+    position: relative;
+    padding: var(--static-space-24) clamp(0rem, 2vw, var(--static-space-24));
+    border-top: 1px solid var(--neutral-alpha-medium);
+    border-radius: var(--radius-l);
+    background: linear-gradient(120deg, var(--neutral-alpha-weak), transparent 65%);
+}
 .hover {
     transition: var(--transition-micro-medium);
 

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, forwardRef } from "react";
+import React, { useState, useEffect, useRef, forwardRef } from "react";
 import { SpacingToken } from "../types";
 import styles from "./RevealFx.module.scss";
 import { Flex } from ".";
@@ -31,9 +31,15 @@ const RevealFx = forwardRef<HTMLDivElement, RevealFxProps>(
     },
     ref,
   ) => {
-    const [isRevealed, setIsRevealed] = useState(revealedByDefault);
+    const [isRevealed, setIsRevealed] = useState(revealedByDefault || delay <= 0);
+    const hasAppliedInitialTrigger = useRef(false);
 
     useEffect(() => {
+      if (delay <= 0) {
+        setIsRevealed(true);
+        return;
+      }
+
       const timer = setTimeout(() => {
         setIsRevealed(true);
       }, delay * 1000);
@@ -43,9 +49,16 @@ const RevealFx = forwardRef<HTMLDivElement, RevealFxProps>(
 
     useEffect(() => {
       if (trigger !== undefined) {
+        // A false trigger is often the initial value used by a carousel. Do
+        // not hide already-rendered content for that first client render.
+        if (!hasAppliedInitialTrigger.current && !trigger && delay <= 0) {
+          hasAppliedInitialTrigger.current = true;
+          return;
+        }
+        hasAppliedInitialTrigger.current = true;
         setIsRevealed(trigger);
       }
-    }, [trigger]);
+    }, [trigger, delay]);
 
     const getSpeedDuration = () => {
       switch (speed) {

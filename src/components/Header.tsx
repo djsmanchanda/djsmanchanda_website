@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { Fade, Flex, Line, ToggleButton, IconButton } from "@/once-ui/components";
@@ -60,6 +60,17 @@ export default TimeDisplay;
 
 export const Header = () => {
   const pathname = usePathname() ?? "";
+  const router = useRouter();
+
+  useEffect(() => {
+    // Warm the public sections as soon as the shell is mounted so navigation
+    // from the homepage has no route-level wait.
+    Object.entries(routes).forEach(([route, enabled]) => {
+      if (enabled) {
+        router.prefetch(route);
+      }
+    });
+  }, [router]);
 
   return (
     <>

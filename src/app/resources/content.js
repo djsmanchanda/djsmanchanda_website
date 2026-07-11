@@ -178,6 +178,33 @@ const about = {
         ],
         images: [],
       },
+      {
+        company: "Samsung Prism Hackathon",
+        timeframe: "2025",
+        role: "Participant",
+        achievements: [
+          <>Built and shipped a focused prototype with a multidisciplinary team through Samsung&apos;s Prism program.</>,
+        ],
+        images: [],
+      },
+      {
+        company: "Llama Stack Challenge - UC Berkeley",
+        timeframe: "2025",
+        role: "Challenge Participant",
+        achievements: [
+          <>Explored practical, open tooling for building reliable LLM applications during the UC Berkeley challenge in California.</>,
+        ],
+        images: [],
+      },
+      {
+        company: "Google Cloud Hacknight - San Francisco",
+        timeframe: "2025",
+        role: "Hacknight Participant",
+        achievements: [
+          <>Prototyped a cloud-backed product idea with Google Cloud services alongside builders in San Francisco.</>,
+        ],
+        images: [],
+      },
     ],
   },
   studies: {

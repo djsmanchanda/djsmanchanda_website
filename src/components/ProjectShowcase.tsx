@@ -8,6 +8,7 @@ type Project = {
   tags: string[];
   href?: string;
   status?: string;
+  comingSoon?: boolean;
 };
 
 const projects: Project[] = [
@@ -24,6 +25,7 @@ const projects: Project[] = [
     summary: "A calm, local monitoring board for live widgets, backed by a manifest registry, FastAPI runtime, websocket snapshots, and guarded AI widget generation.",
     tags: ["Next.js", "FastAPI", "AI systems"],
     href: "https://github.com/djsmanchanda/GremlinBoard",
+    status: "In active development",
   },
   {
     title: "Blue Star Smart AC Control",
@@ -46,6 +48,13 @@ const projects: Project[] = [
     tags: ["Next.js", "Cloudflare D1", "Product design"],
     href: "https://github.com/djsmanchanda/nacho_index",
   },
+  {
+    title: "A new experiment is taking shape",
+    eyebrow: "Open slot",
+    summary: "There is another idea on the bench. I am keeping the details quiet until it is useful enough to share.",
+    tags: ["More soon"],
+    comingSoon: true,
+  },
 ];
 
 export function ProjectShowcase() {
@@ -56,7 +65,7 @@ export function ProjectShowcase() {
           <p className={styles.kicker}>Selected work</p>
           <h2 id="selected-work">A wide range of problems. The same bias toward shipping.</h2>
         </div>
-        <p>I like work that connects a real user need to thoughtful engineering — from a civic weather tool to a tiny piece of home automation.</p>
+        <p>I like work that connects a real user need to thoughtful engineering - from a civic weather tool to a tiny piece of home automation.</p>
       </div>
 
       <div className={styles.grid}>
@@ -72,6 +81,11 @@ export function ProjectShowcase() {
               <ul aria-label={`${project.title} technologies`}>
                 {project.tags.map((tag) => <li key={tag}>{tag}</li>)}
               </ul>
+              {project.comingSoon && (
+                <span className={styles.comingSoonLabel}>
+                  Coming soon <span className={styles.comingSoonIndicator} aria-hidden="true" />
+                </span>
+              )}
               {project.href && <span className={styles.linkLabel}>View project <span aria-hidden="true">↗</span></span>}
             </>
           );
@@ -79,7 +93,7 @@ export function ProjectShowcase() {
           return project.href ? (
             <Link className={styles.card} href={project.href} target="_blank" rel="noreferrer" key={project.title}>{content}</Link>
           ) : (
-            <article className={styles.card} key={project.title}>{content}</article>
+            <article className={`${styles.card} ${project.comingSoon ? styles.comingSoonCard : ""}`} key={project.title} aria-label={project.comingSoon ? "Coming soon project" : undefined}>{content}</article>
           );
         })}
       </div>

@@ -23,7 +23,9 @@ export default function FloatingParticles() {
 
     let animationFrameId: number;
     const particles: Particle[] = [];
-    const particleCount = 200
+    const connectionDistance = 165;
+
+    const getParticleCount = () => (window.innerWidth < 700 ? 150 : 260);
 
     const resize = () => {
       canvas.width = window.innerWidth;
@@ -32,14 +34,14 @@ export default function FloatingParticles() {
 
     const createParticles = () => {
       particles.length = 0;
-      for (let i = 0; i < particleCount; i++) {
+      for (let i = 0; i < getParticleCount(); i += 1) {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          size: Math.random() * 2 + 0.5,
+          size: Math.random() * 1.8 + 0.45,
           speedX: (Math.random() - 0.5) * 0.3,
           speedY: (Math.random() - 0.5) * 0.3,
-          opacity: Math.random() * 0.4 + 0.1,
+          opacity: Math.random() * 0.38 + 0.12,
         });
       }
     };
@@ -48,36 +50,31 @@ export default function FloatingParticles() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       particles.forEach((particle) => {
-        // Update position
         particle.x += particle.speedX;
         particle.y += particle.speedY;
 
-        // Wrap around screen edges
         if (particle.x > canvas.width) particle.x = 0;
         if (particle.x < 0) particle.x = canvas.width;
         if (particle.y > canvas.height) particle.y = 0;
         if (particle.y < 0) particle.y = canvas.height;
 
-        // Draw particle
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(138, 180, 248, ${particle.opacity})`;
         ctx.fill();
-
       });
 
-      // Draw connections between nearby particles
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
+      for (let i = 0; i < particles.length; i += 1) {
+        for (let j = i + 1; j < particles.length; j += 1) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 150) {
+          if (distance < connectionDistance) {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(102, 126, 234, ${0.1 * (1 - distance / 150)})`;
+            ctx.strokeStyle = `rgba(92, 145, 235, ${0.12 * (1 - distance / connectionDistance)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -87,17 +84,17 @@ export default function FloatingParticles() {
       animationFrameId = requestAnimationFrame(animate);
     };
 
-    resize();
-    createParticles();
-    animate();
-
-    window.addEventListener("resize", () => {
+    const handleResize = () => {
       resize();
       createParticles();
-    });
+    };
+
+    handleResize();
+    animate();
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener("resize", resize);
+      window.removeEventListener("resize", handleResize);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
@@ -105,6 +102,7 @@ export default function FloatingParticles() {
   return (
     <canvas
       ref={canvasRef}
+      aria-hidden="true"
       style={{
         position: "fixed",
         top: 0,
@@ -113,7 +111,7 @@ export default function FloatingParticles() {
         height: "100%",
         zIndex: -1,
         pointerEvents: "none",
-        opacity: 0.4,
+        opacity: 0.42,
       }}
     />
   );

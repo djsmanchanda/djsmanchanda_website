@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, Flex, Text, Column, RevealFx, Tag } from "@/once-ui/components";
+import { Heading, Flex, Text, Column, Tag } from "@/once-ui/components";
 import { baseURL } from "@/app/resources";
 import { work, person, internships } from "@/app/resources/content";
 
@@ -56,19 +56,19 @@ export default function Work() {
       />
 
       {/* Header Section */}
-      <RevealFx translateY="4">
+      <Column>
         <Heading as="h1" variant="display-strong-l" paddingBottom="l">
           {work.title}
         </Heading>
         <Text variant="body-default-l" onBackground="neutral-weak">
           {work.description}
         </Text>
-      </RevealFx>
+      </Column>
 
       {/* Work Experience List */}
       <Column gap="xl" paddingY="l">
-        {experiences.map((experience, index) => (
-          <RevealFx key={index} translateY="8" delay={index * 0.1}>
+        {experiences.map((experience) => (
+          <Column key={experience.company}>
             <Column
               gap="m"
               paddingY="l"
@@ -131,7 +131,7 @@ export default function Work() {
                 ))}
               </Flex>
             </Column>
-          </RevealFx>
+          </Column>
         ))}
       </Column>
     </Column>
