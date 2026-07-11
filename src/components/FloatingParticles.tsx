@@ -74,7 +74,7 @@ export default function FloatingParticles() {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(92, 145, 235, ${0.12 * (1 - distance / connectionDistance)})`;
+            ctx.strokeStyle = `rgba(104, 158, 248, ${0.18 * (1 - distance / connectionDistance)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -109,9 +109,9 @@ export default function FloatingParticles() {
         left: 0,
         width: "100%",
         height: "100%",
-        zIndex: -1,
+        zIndex: 0,
         pointerEvents: "none",
-        opacity: 0.42,
+        opacity: 0.52,
       }}
     />
   );
