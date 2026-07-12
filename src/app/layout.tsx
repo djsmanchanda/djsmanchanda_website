@@ -2,6 +2,7 @@ import "@/once-ui/styles/index.scss";
 import "@/once-ui/tokens/index.scss";
 
 import { Analytics } from "@vercel/analytics/next";
+import { Space_Grotesk } from "next/font/google";
 import { Footer, Header, RouteGuard } from "@/components";
 import { baseURL, effects, style } from "@/app/resources";
 
@@ -35,6 +36,13 @@ export async function generateMetadata() {
   };
 }
 
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-space-grotesk",
+  display: "swap",
+});
+
 interface RootLayoutProps {
   children: React.ReactNode;
 }
@@ -54,7 +62,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       data-border={style.border}
       data-surface={style.surface}
       data-transition={style.transition}
-      className="font-vars"
+      className={`font-vars ${spaceGrotesk.variable}`}
 
     >
       <ToastProvider>

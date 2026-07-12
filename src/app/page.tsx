@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import { Button, Column, Flex, Heading, Text } from "@/once-ui/components";
 import FloatingParticles from "@/components/FloatingParticles";
+import { TypewriterText } from "@/components/TypewriterText";
 import { ProjectShowcase } from "@/components/ProjectShowcase";
 import { baseURL } from "@/app/resources";
 import { home, person } from "@/app/resources/content";
@@ -36,7 +37,7 @@ export default function Home() {
   return (
     <>
       <FloatingParticles />
-      <Column maxWidth="m" gap="xl" horizontal="center" className={styles.homeShell}>
+      <Column maxWidth="m" gap="l" horizontal="center" className={styles.homeShell}>
         <script
           type="application/ld+json"
           suppressHydrationWarning
@@ -57,20 +58,22 @@ export default function Home() {
         />
 
         <section className={styles.heroLayout} aria-labelledby="home-heading">
-          <Column fillWidth paddingY="xl" gap="l" className={styles.heroCopy}>
-            <Text variant="label-strong-s" onBackground="neutral-weak" className={styles.greeting}>
-              Hi, I&apos;m Divjot Singh Manchanda —
-            </Text>
-            <Text variant="label-strong-s" onBackground="brand-weak">
-              AI ENGINEER · PRODUCT BUILDER · OPEN TO NEW OPPORTUNITIES
-            </Text>
+          <Column fillWidth paddingY="xl" gap="m" className={styles.heroCopy}>
+            <Column gap="8">
+              <Text variant="body-default-m" className={styles.greeting}>
+                <TypewriterText text="Hi, I'm Divjot Singh Manchanda" />
+              </Text>
+              <Text variant="label-strong-s" onBackground="brand-weak" className={styles.eyebrow}>
+                AI Engineer · Product Builder · Open to new opportunities
+              </Text>
+            </Column>
             <Heading id="home-heading" as="h1" wrap="balance" variant="display-strong-l" className={styles.heroHeading}>
               {home.headline}
             </Heading>
-            <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-l" className={styles.heroSubline}>
+            <Text wrap="balance" onBackground="neutral-weak" variant="body-default-l" className={styles.heroSubline}>
               {home.subline}
             </Text>
-            <Flex gap="12" wrap marginTop="m">
+            <Flex gap="12" wrap marginTop="s">
               <Button href="mailto:djsmanchanda@gmail.com" variant="primary" size="m" arrowIcon>
                 Let&apos;s talk
               </Button>
@@ -112,8 +115,10 @@ export default function Home() {
 
         <section aria-labelledby="working-style" className={styles.workingStyle}>
           <Column gap="m" style={{ maxWidth: "48rem" }}>
-            <Text variant="label-strong-s" onBackground="brand-weak">HOW I LIKE TO WORK</Text>
-            <Heading as="h2" id="working-style" variant="display-strong-s" wrap="balance">
+            <Text variant="label-strong-s" onBackground="brand-weak" className={styles.eyebrow}>
+              How I like to work
+            </Text>
+            <Heading as="h2" id="working-style" variant="display-strong-s" wrap="balance" className={styles.sectionHeading}>
               Curious enough to explore. Practical enough to finish.
             </Heading>
             <Text variant="body-default-l" onBackground="neutral-weak" wrap="balance" style={{ lineHeight: 1.6 }}>
