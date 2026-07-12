@@ -1,0 +1,118 @@
+/* Work page — homepage visual system */
+
+.page {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  padding: clamp(1.5rem, 4vw, 3rem) 0 clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.eyebrow {
+  font-size: 0.8rem !important;
+  font-weight: 700;
+  letter-spacing: 0.09em !important;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: clamp(2.25rem, 4vw, 3.25rem) !important;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.subtitle {
+  max-width: 44rem;
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem) !important;
+  line-height: 1.6;
+}
+
+.list {
+  display: grid;
+  width: 100%;
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid var(--neutral-border-medium);
+  border-radius: 1rem;
+  background: var(--neutral-border-medium);
+  margin-bottom: 3rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  background: var(--page-background);
+  transition: background-color 160ms ease;
+
+  &:hover {
+    background: var(--neutral-alpha-weak);
+  }
+}
+
+.cardTop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+}
+
+.company {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: clamp(1.35rem, 2vw, 1.65rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.meta {
+  color: var(--neutral-on-background-weak);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.role {
+  margin: 0.35rem 0 0;
+  color: var(--brand-on-background-weak);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.description {
+  margin: 0.85rem 0 0;
+  max-width: 52rem;
+  color: var(--neutral-on-background-weak);
+  line-height: 1.6;
+}
+
+.achievements {
+  margin: 1rem 0 0;
+  padding-left: 1.1rem;
+
+  li {
+    margin-bottom: 0.5rem;
+    padding-left: 0.25rem;
+    color: var(--neutral-on-background-medium);
+    line-height: 1.55;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1.15rem;
+
+  span {
+    border: 1px solid var(--neutral-border-medium);
+    border-radius: 999px;
+    padding: 0.3rem 0.55rem;
+    color: var(--neutral-on-background-weak);
+    font-size: 0.75rem;
+    line-height: 1;
+  }
+}

@@ -1,78 +1,200 @@
-.section {
-    position: relative;
-    padding: var(--static-space-24) clamp(0rem, 2vw, var(--static-space-24));
-    border-top: 1px solid var(--neutral-alpha-medium);
-    border-radius: var(--radius-l);
-    background: linear-gradient(120deg, var(--neutral-alpha-weak), transparent 65%);
+/* About page — shares the homepage visual system:
+   eyebrow labels, Space Grotesk display headings, border-separated
+   sections, and the 1px bordered card grid. */
+
+.page {
+  position: relative;
+  z-index: 1;
+  width: 100%;
 }
+
+/* Used by TableOfContents */
 .hover {
-    transition: var(--transition-micro-medium);
+  transition: var(--transition-micro-medium);
 
-    &:hover {
-        transform: translateX(var(--static-space-4));
-    }
+  &:hover {
+    transform: translateX(var(--static-space-4));
+  }
 }
 
-.avatar {
-    position: sticky;
-    height: fit-content;
-    top: var(--static-space-64);
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: clamp(1.75rem, 4vw, 3.5rem);
+  padding: clamp(1.5rem, 4vw, 3rem) 0 clamp(1.75rem, 4vw, 3rem);
 }
 
-.avatarPositioning {
-    margin-left: -50px; // Pulls the avatar closer to the TOC
+.avatarWrap {
+  position: relative;
+  flex-shrink: 0;
 }
 
-@media (--m) {
-    .avatarPositioning {
-        margin-left: 0; // Reset on mobile where TOC is hidden
-    }
+/* Same halo treatment as the homepage portrait */
+.avatarWrap::before {
+  position: absolute;
+  inset: -28%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(72, 130, 235, 0.4), rgba(48, 98, 205, 0.16) 55%, rgba(8, 22, 52, 0) 78%);
+  filter: blur(22px);
+  content: "";
+  pointer-events: none;
+  z-index: -1;
 }
 
-@media (--s) {
-    .avatar {
-        top: auto;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
+.headerText {
+  min-width: 0;
+}
 
-    .textAlign {
-        text-align: center;
-    }
+.eyebrow {
+  font-size: 0.8rem !important;
+  font-weight: 700;
+  letter-spacing: 0.09em !important;
+  text-transform: uppercase;
+}
 
-    .blockAlign {
-        align-self: center;
-        width: 100% !important;
-    }
+.name {
+  font-size: clamp(2.25rem, 4vw, 3.25rem) !important;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
 
-    /* Make content truly full width on mobile - ZERO side padding */
-    .mobileFullWidth {
-        max-width: none !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-        padding-left: 4px !important;
-        padding-right: 4px !important;
-        padding-bottom: 120px !important;
-        margin: 0 !important;
-    }
+.role {
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem) !important;
+  line-height: 1.5;
+}
 
-    /* Better spacing for section content */
-    .section {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        text-align: left;
-        width: 100% !important;
-    }
+.section {
+  width: 100%;
+  border-top: 1px solid rgba(133, 163, 218, 0.22);
+  padding: clamp(1.75rem, 4vw, 2.75rem) 0;
+}
 
-    /* Smaller font for long company/institution names */
-    .mobileCompanyName {
-        font-size: 1.1rem !important;
-        line-height: 1.4 !important;
-    }
+.sectionHeading {
+  font-size: clamp(1.7rem, 2.8vw, 2.4rem) !important;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
 
-    /* Improve list item spacing */
-    .mobileListItem {
-        padding-left: var(--static-space-8) !important;
-        margin-bottom: var(--static-space-12) !important;
-    }
+.intro {
+  max-width: 44rem;
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem) !important;
+  line-height: 1.65;
+}
+
+/* Bordered card grid (matches ProjectShowcase) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid var(--neutral-border-medium);
+  border-radius: 1rem;
+  background: var(--neutral-border-medium);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  min-height: 9rem;
+  padding: clamp(1.25rem, 2.5vw, 1.5rem);
+  background: var(--page-background);
+  transition: background-color 160ms ease;
+
+  &:hover {
+    background: var(--neutral-alpha-weak);
+  }
+
+  h3 {
+    margin: 0;
+    font-family: var(--font-family-heading);
+    font-size: clamp(1.15rem, 1.6vw, 1.35rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+}
+
+.cardTopline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+
+  p {
+    margin: 0;
+    color: var(--brand-on-background-weak);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  span {
+    flex-shrink: 0;
+    white-space: nowrap;
+    border: 1px solid var(--neutral-border-medium);
+    border-radius: 999px;
+    padding: 0.3rem 0.55rem;
+    color: var(--neutral-on-background-weak);
+    font-size: 0.75rem;
+    line-height: 1;
+  }
+}
+
+.summary {
+  margin: 0.6rem 0 0;
+  color: var(--neutral-on-background-weak);
+  font-size: 0.95rem;
+  line-height: 1.55;
+
+  a {
+    color: var(--brand-on-background-weak);
+  }
+}
+
+/* Stacked rows for work / studies / skills */
+.itemRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+}
+
+.itemTitle {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.itemMeta {
+  color: var(--neutral-on-background-weak);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.itemRole {
+  margin: 0.15rem 0 0;
+  color: var(--brand-on-background-weak);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    min-height: 0;
+  }
 }
