@@ -169,6 +169,15 @@ const about = {
         images: [],
       },
       {
+        company: "Innofusion’24 - SRM",
+        timeframe: "2024",
+        role: "2nd place",
+        achievements: [
+          <>Secured 2nd rank for Project - Radiology Assistant.</>,
+        ],
+        images: [],
+      },
+      {
         company: "Google Cloud Hacknight, San Francisco",
         timeframe: "May 2025",
         role: "3rd place",
