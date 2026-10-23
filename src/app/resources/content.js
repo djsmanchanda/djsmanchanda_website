@@ -11,7 +11,6 @@ const person = {
   avatar: "/images/avatar.jpg",
   location: "America/Los_Angeles", // UC Berkeley timezone
   location2: "Asia/Kolkata", // India timezone
-  languages: ["English", "Hindi"],
 };
 
 const newsletter = {
@@ -92,13 +91,13 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        AI engineer and researcher building intelligent systems that solve real-world problems.
+        AI engineer and researcher building practical systems at the intersection of AI agents and cybersecurity.
         <br /><br />
-        <strong>Currently:</strong> Working as an intern and a member of the technical staff at Acalvio.
+        <strong>Currently:</strong> An intern and member of the technical staff at Acalvio.
         <br /><br />
         <strong>Previously:</strong> Studied AI at SRMIST and researched exosome-based medical diagnostics at UC Berkeley. Built supply-chain optimization tools at Renault-Nissan, developed fintech solutions at IIT Madras, and created AI-driven health diagnostics systems.
         <br /><br />
-        8x hackathon winner passionate about turning cutting-edge research into impactful products.
+        8x hackathon winner who enjoys turning research into useful products.
       </>
     ),
   },

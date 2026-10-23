@@ -7,7 +7,6 @@ import {
   Flex,
   Heading,
   SmartImage,
-  Tag,
   Text,
 } from "@/once-ui/components";
 import { baseURL } from "@/app/resources";
@@ -179,15 +178,6 @@ export default function About() {
           <Text onBackground="neutral-weak" className={styles.role}>
             {person.role}
           </Text>
-          {person.languages.length > 0 && (
-            <Flex wrap gap="8">
-              {person.languages.map((language) => (
-                <Tag key={language} size="l">
-                  {language}
-                </Tag>
-              ))}
-            </Flex>
-          )}
           {about.calendar.display && (
             <Flex wrap gap="8" paddingTop="8">
               <Button
