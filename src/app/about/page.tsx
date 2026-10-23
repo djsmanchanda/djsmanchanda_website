@@ -75,18 +75,20 @@ const ExperienceEntry = ({ experience }: { experience: any }) => (
       <span className={styles.itemMeta}>{experience.timeframe}</span>
     </div>
     <p className={styles.itemRole}>{experience.role}</p>
-    <Column as="ul" gap="8" paddingTop="8">
-      {experience.achievements.map((achievement: ReactNode, index: number) => (
-        <Text
-          as="li"
-          variant="body-default-m"
-          onBackground="neutral-weak"
-          key={`${experience.company}-achievement-${index}`}
-        >
-          {achievement}
-        </Text>
-      ))}
-    </Column>
+    {experience.achievements.length > 0 && (
+      <Column as="ul" gap="8" paddingTop="8">
+        {experience.achievements.map((achievement: ReactNode, index: number) => (
+          <Text
+            as="li"
+            variant="body-default-m"
+            onBackground="neutral-weak"
+            key={`${experience.company}-achievement-${index}`}
+          >
+            {achievement}
+          </Text>
+        ))}
+      </Column>
+    )}
     <ExperienceImages images={experience.images} />
   </Column>
 );
