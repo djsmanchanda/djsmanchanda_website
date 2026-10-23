@@ -94,9 +94,9 @@ const about = {
       <>
         AI engineer and researcher building intelligent systems that solve real-world problems.
         <br /><br />
-        <strong>Currently:</strong> Studying AI at SRMIST and researching exosome-based medical diagnostics at UC Berkeley.
+        <strong>Currently:</strong> Working as an intern and a member of the technical staff at Acalvio.
         <br /><br />
-        <strong>Previously:</strong> Built supply-chain optimization tools at Renault-Nissan, developed fintech solutions at IIT Madras, and created AI-driven health diagnostics systems.
+        <strong>Previously:</strong> Studied AI at SRMIST and researched exosome-based medical diagnostics at UC Berkeley. Built supply-chain optimization tools at Renault-Nissan, developed fintech solutions at IIT Madras, and created AI-driven health diagnostics systems.
         <br /><br />
         8x hackathon winner passionate about turning cutting-edge research into impactful products.
       </>
